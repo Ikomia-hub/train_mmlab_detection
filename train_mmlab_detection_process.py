@@ -296,23 +296,29 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         dataprocess.CTaskFactory.__init__(self)
         # Set process information as string here
         self.info.name = "train_mmlab_detection"
-        self.info.shortDescription = "your short description"
-        self.info.description = "your description"
+        self.info.shortDescription = "Train for MMLAB detection models"
+        self.info.description = "Train for MMLAB detection models"
         # relative path -> as displayed in Ikomia application process tree
-        self.info.path = "Plugins/Python"
+        self.info.path = "Plugins/Python/Detection"
+        self.info.iconPath = "icons/mmlab.png"
         self.info.version = "1.0.0"
         # self.info.iconPath = "your path to a specific icon"
-        self.info.authors = "algorithm author"
-        self.info.article = "title of associated research article"
+        self.info.authors = "Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and" \
+                            "Xiong, Yu and Li, Xiaoxiao and Sun, Shuyang and Feng, Wansen and" \
+                            "Liu, Ziwei and Xu, Jiarui and Zhang, Zheng and Cheng, Dazhi and" \
+                            "Zhu, Chenchen and Cheng, Tianheng and Zhao, Qijie and Li, Buyu and" \
+                            "Lu, Xin and Zhu, Rui and Wu, Yue and Dai, Jifeng and Wang, Jingdong" \
+                            "and Shi, Jianping and Ouyang, Wanli and Loy, Chen Change and Lin, Dahua"
+        self.info.article = "{MMDetection}: Open MMLab Detection Toolbox and Benchmark"
         self.info.journal = "publication journal"
-        self.info.year = 2021
-        self.info.license = "MIT License"
+        self.info.year = 2019
+        self.info.license = "Apache 2.0"
         # URL of documentation
-        self.info.documentationLink = ""
+        self.info.documentationLink = "https://mmdetection.readthedocs.io/en/latest/"
         # Code source repository
-        self.info.repository = ""
+        self.info.repository = "https://github.com/open-mmlab/mmdetection"
         # Keywords used for search
-        self.info.keywords = "your,keywords,here"
+        self.info.keywords = "train, mmlab, mmdet, detection"
 
     def create(self, param=None):
         # Create process object
