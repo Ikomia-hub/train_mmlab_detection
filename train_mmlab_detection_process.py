@@ -125,10 +125,16 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         prepare_dataset(ikdataset.data, plugin_folder, split)
         register_mmlab_modules()
+        if param.cfg["expert_mode"]:
+            config = param.cfg["custom_config"]
+            cfg = Config.fromfile(config)
+        else:
+            config = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", param.cfg["model_name"],
+                                  param.cfg["model_config"] + '.py')
+            cfg = Config.fromfile(config)
+            # scale lr
+            cfg.optimizer.lr = cfg.optimizer.lr / 64 * param.cfg["batch_size"]
 
-        config = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", param.cfg["model_name"],
-                              param.cfg["model_config"] + '.py')
-        cfg = Config.fromfile(config)
         classes = list(ikdataset.data["metadata"]["category_names"].values())
         search_and_modify_cfg(cfg, "num_classes", len(classes))
         cfg.work_dir = save_dir
@@ -189,8 +195,6 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         deterministic = True
         no_validate = cfg.evaluation.interval <= 0
         cfg.checkpoint_config = None
-        # scale lr
-        cfg.optimizer.lr = cfg.optimizer.lr / 64 * param.cfg["batch_size"]
 
         # import modules from string list.
         if cfg.get('custom_imports', None):
