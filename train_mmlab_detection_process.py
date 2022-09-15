@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from ikomia import core, dataprocess
+from ikomia import core, dataprocess, utils
 from ikomia.core.task import TaskParam
 from ikomia.dnn import dnntrain
 from ikomia.core import config as ikcfg
@@ -34,7 +34,6 @@ import os
 import torch
 from train_mmlab_detection.utils import prepare_dataset, UserStop, register_mmlab_modules, search_and_modify_cfg
 from datetime import datetime
-from distutils.util import strtobool
 import logging
 
 logger = logging.getLogger()
@@ -76,7 +75,7 @@ class TrainMmlabDetectionParam(TaskParam):
         self.cfg["output_folder"] = param_map["output_folder"]
         self.cfg["eval_period"] = int(param_map["eval_period"])
         self.cfg["dataset_folder"] = param_map["dataset_folder"]
-        self.cfg["expert_mode"] = strtobool(param_map["expert_mode"])
+        self.cfg["expert_mode"] = utils.strtobool(param_map["expert_mode"])
         self.cfg["custom_config"] = param_map["custom_config"]
 
 
