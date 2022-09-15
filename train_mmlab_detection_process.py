@@ -116,8 +116,6 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         str_datetime = datetime.now().strftime("%d-%m-%YT%Hh%Mm%Ss")
 
-        save_dir = os.path.join(plugin_folder, "runs", str_datetime)
-
         tb_logdir = os.path.join(ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
 
         split = param.cfg["dataset_split_percentage"] / 100
@@ -136,7 +134,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         classes = list(ikdataset.data["metadata"]["category_names"].values())
         search_and_modify_cfg(cfg, "num_classes", len(classes))
-        cfg.work_dir = save_dir
+        cfg.work_dir = repr(os.path.join(plugin_folder, "runs", str_datetime))[1:-1]
         eval_period = param.cfg["eval_period"]
         cfg.load_from = param.cfg["model_url"]
         cfg.log_config = dict(
@@ -145,7 +143,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             hooks=[
                 dict(type='TextLoggerHook'),
                 dict(type='TensorboardLoggerHook',
-                     log_dir=tb_logdir)
+                     log_dir=repr(tb_logdir)[1:-1])
             ])
         cfg.total_epochs = cfg.max_epochs = cfg.runner.max_epochs = param.cfg["epochs"]
 
@@ -159,7 +157,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             dataset=dict(
                 type=cfg.dataset_type,
                 classes=classes,
-                ann_file=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'dataset', 'instances_train.json'),
+                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_train.json'))[1:-1],
                 img_prefix=None,
                 pipeline=[
                     dict(type='LoadImageFromFile'),
@@ -176,13 +174,13 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             test=dict(
                 type=cfg.dataset_type,
                 classes=classes,
-                ann_file=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'dataset', 'instances_test.json'),
+                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_test.json'))[1:-1],
                 img_prefix=None,
                 pipeline=cfg.test_pipeline),
             val=dict(
                 type=cfg.dataset_type,
                 classes=classes,
-                ann_file=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'dataset', 'instances_test.json'),
+                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_test.json'))[1:-1],
                 img_prefix=None,
                 pipeline=cfg.test_pipeline))
 
@@ -217,8 +215,9 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         # create work_dir
         mmcv.mkdir_or_exist(os.path.abspath(cfg.work_dir))
+
         # dump config
-        cfg.dump(os.path.join(cfg.work_dir, os.path.basename(config)))
+        cfg.dump(repr(os.path.abspath(os.path.join(cfg.work_dir, os.path.basename(config))))[1:-1])
 
         # init the logger before other steps
         timestamp = str_datetime
