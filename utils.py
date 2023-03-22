@@ -43,13 +43,13 @@ def register_mmlab_modules():
     @HOOKS.register_module(force=True)
     class CustomHook(Hook):
         # Check at each iter if the training must be stopped
-        def __init__(self, stop, output_folder, emitStepProgress):
+        def __init__(self, stop, output_folder, emit_step_progress):
             self.stop = stop
             self.output_folder = output_folder
-            self.emitStepProgress = emitStepProgress
+            self.emit_step_progress = emit_step_progress
 
         def after_epoch(self, runner):
-            self.emitStepProgress()
+            self.emit_step_progress()
 
         def after_train_iter(self, runner):
             # Check if training must be stopped and save last model
