@@ -64,9 +64,9 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
 
         self.spin_epochs = pyqtutils.append_spin(self.gridLayout, "Epochs", self.parameters.cfg["epochs"])
         self.spin_batch_size = pyqtutils.append_spin(self.gridLayout, "Batch size", self.parameters.cfg["batch_size"])
-        self.spin_dataset_percentage = pyqtutils.append_spin(self.gridLayout, "Split train/test (%)",
-                                                             self.parameters.cfg["dataset_split_percentage"],
-                                                             min=1, max=100)
+        self.spin_dataset_percentage = pyqtutils.append_double_spin(self.gridLayout, "Split train/test (%)",
+                                                             self.parameters.cfg["dataset_split_ratio"],
+                                                             min=0.1, max=1, decimals=2, step=0.1)
         self.spin_eval_period = pyqtutils.append_spin(self.gridLayout, "Eval period",
                                                       self.parameters.cfg["eval_period"])
         self.browse_output_folder = pyqtutils.append_browse_file(self.gridLayout, "Output folder",
@@ -76,9 +76,9 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
                                                                   path=self.parameters.cfg["dataset_folder"],
                                                                   mode=QFileDialog.Directory)
         self.check_expert_mode = pyqtutils.append_check(self.gridLayout, "Expert mode",
-                                                        self.parameters.cfg["expert_mode"])
+                                                        self.parameters.cfg["use_custom_model"])
         self.browse_custom_config = pyqtutils.append_browse_file(self.gridLayout, "Custom config",
-                                                                 path=self.parameters.cfg["custom_config"])
+                                                                 path=self.parameters.cfg["config"])
         # PyQt -> Qt wrapping
         layout_ptr = qtconversion.PyQtToQt(self.gridLayout)
 
@@ -112,11 +112,11 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
         self.parameters.cfg["batch_size"] = self.spin_batch_size.value()
         self.parameters.cfg["epochs"] = self.spin_epochs.value()
         self.parameters.cfg["eval_period"] = self.spin_eval_period.value()
-        self.parameters.cfg["dataset_split_percentage"] = self.spin_dataset_percentage.value()
+        self.parameters.cfg["dataset_split_ratio"] = self.spin_dataset_percentage.value()
         self.parameters.cfg["output_folder"] = self.browse_output_folder.path
         self.parameters.cfg["dataset_folder"] = self.browse_dataset_folder.path
-        self.parameters.cfg["expert_mode"] = self.check_expert_mode.isChecked()
-        self.parameters.cfg["custom_config"] = self.browse_custom_config.path
+        self.parameters.cfg["use_custom_model"] = self.check_expert_mode.isChecked()
+        self.parameters.cfg["config"] = self.browse_custom_config.path
 
         # Send signal to launch the process
         self.emit_apply(self.parameters)

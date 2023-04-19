@@ -57,13 +57,13 @@ class TrainMmlabDetectionParam(TaskParam):
                                 "/yolox_x_8x8_300e_coco_20211126_140254-1ef88d67.pth "
         self.cfg["epochs"] = 10
         self.cfg["batch_size"] = 2
-        self.cfg["dataset_split_percentage"] = 90
+        self.cfg["dataset_split_ratio"] = 0.9
         self.cfg["output_folder"] = os.path.dirname(os.path.realpath(__file__)) + "/runs/"
         self.cfg["eval_period"] = 1
         plugin_folder = os.path.dirname(os.path.realpath(__file__))
         self.cfg["dataset_folder"] = os.path.join(plugin_folder, 'dataset')
-        self.cfg["expert_mode"] = False
-        self.cfg["custom_config"] = ""
+        self.cfg["use_custom_model"] = False
+        self.cfg["config"] = ""
 
     def set_values(self, param_map):
         self.cfg["model_name"] = param_map["model_name"]
@@ -71,12 +71,12 @@ class TrainMmlabDetectionParam(TaskParam):
         self.cfg["model_config"] = param_map["model_config"]
         self.cfg["epochs"] = int(param_map["epochs"])
         self.cfg["batch_size"] = int(param_map["batch_size"])
-        self.cfg["dataset_split_percentage"] = int(param_map["dataset_split_percentage"])
+        self.cfg["dataset_split_ratio"] = int(param_map["dataset_split_ratio"])
         self.cfg["output_folder"] = param_map["output_folder"]
         self.cfg["eval_period"] = int(param_map["eval_period"])
         self.cfg["dataset_folder"] = param_map["dataset_folder"]
-        self.cfg["expert_mode"] = utils.strtobool(param_map["expert_mode"])
-        self.cfg["custom_config"] = param_map["custom_config"]
+        self.cfg["use_custom_model"] = utils.strtobool(param_map["use_custom_model"])
+        self.cfg["config"] = param_map["config"]
 
 
 # --------------------
@@ -118,12 +118,12 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         tb_logdir = os.path.join(ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
 
-        split = param.cfg["dataset_split_percentage"] / 100
+        split = param.cfg["dataset_split_ratio"]
 
         prepare_dataset(ikdataset.data, plugin_folder, split)
         register_mmlab_modules()
-        if param.cfg["expert_mode"]:
-            config = param.cfg["custom_config"]
+        if param.cfg["use_custom_model"]:
+            config = param.cfg["config"]
             cfg = Config.fromfile(config)
         else:
             config = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", param.cfg["model_name"],
