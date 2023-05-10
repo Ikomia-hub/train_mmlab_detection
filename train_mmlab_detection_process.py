@@ -22,16 +22,15 @@ from ikomia.dnn import dnntrain
 from ikomia.core import config as ikcfg
 
 import copy
-from mmcv import Config
-from mmcv.runner import get_dist_info, init_dist
+from typing import Union, Dict
+from mmengine.config import Config, ConfigDict
+from mmengine.logging import print_log
+from mmengine.runner import Runner
+from mmengine.visualization import Visualizer
+from mmdet.utils import register_all_modules
+ConfigType = Union[Dict, Config, ConfigDict]
 
-from mmdet.apis import set_random_seed, train_detector
-from mmdet.datasets import build_dataset
-from mmdet.models import build_detector
-from mmdet.utils import (collect_env, get_root_logger)
-import mmcv
 import os
-import torch
 from train_mmlab_detection.utils import prepare_dataset, UserStop, register_mmlab_modules, search_and_modify_cfg
 from datetime import datetime
 import logging
@@ -40,6 +39,52 @@ logger = logging.getLogger()
 
 
 # Your imports below
+
+class MyRunner(Runner):
+
+    @classmethod
+    def from_custom_cfg(cls, cfg: ConfigType, custom_hooks: ConfigType, visualizer) -> 'Runner':
+        """Build a runner from config.
+
+        Args:
+            cfg (ConfigType): A config used for building runner. Keys of
+                ``cfg`` can see :meth:`__init__`.
+
+        Returns:
+            Runner: A runner build from ``cfg``.
+        """
+        cfg = copy.deepcopy(cfg)
+        runner = cls(
+            model=cfg['model'],
+            work_dir=cfg['work_dir'],
+            train_dataloader=cfg.get('train_dataloader'),
+            val_dataloader=cfg.get('val_dataloader'),
+            test_dataloader=cfg.get('test_dataloader'),
+            train_cfg=cfg.get('train_cfg'),
+            val_cfg=cfg.get('val_cfg'),
+            test_cfg=cfg.get('test_cfg'),
+            auto_scale_lr=cfg.get('auto_scale_lr'),
+            optim_wrapper=cfg.get('optim_wrapper'),
+            param_scheduler=cfg.get('param_scheduler'),
+            val_evaluator=cfg.get('val_evaluator'),
+            test_evaluator=cfg.get('test_evaluator'),
+            default_hooks=cfg.get('default_hooks'),
+            custom_hooks=custom_hooks,
+            data_preprocessor=cfg.get('data_preprocessor'),
+            load_from=cfg.get('load_from'),
+            resume=cfg.get('resume', False),
+            launcher=cfg.get('launcher', 'none'),
+            env_cfg=cfg.get('env_cfg'),  # type: ignore
+            log_processor=cfg.get('log_processor'),
+            log_level=cfg.get('log_level', 'INFO'),
+            visualizer=visualizer,
+            default_scope=cfg.get('default_scope', 'mmengine'),
+            randomness=cfg.get('randomness', dict(seed=None)),
+            experiment_name=cfg.get('experiment_name'),
+            cfg=cfg,
+        )
+
+        return runner
 
 
 # --------------------
@@ -51,13 +96,13 @@ class TrainMmlabDetectionParam(TaskParam):
     def __init__(self):
         TaskParam.__init__(self)
         # Place default value initialization here
-        self.cfg["model_config"] = "yolox_tiny_8x8_300e_coco"
+        self.cfg["model_config"] = "configs/yolox/yolox_s_8xb8-300e_coco.py"
         self.cfg["model_name"] = "yolox"
-        self.cfg["model_url"] = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_x_8x8_300e_coco" \
-                                "/yolox_x_8x8_300e_coco_20211126_140254-1ef88d67.pth "
+        self.cfg["model_url"] = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/" \
+                         "yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"
         self.cfg["epochs"] = 10
         self.cfg["batch_size"] = 2
-        self.cfg["dataset_split_ratio"] = 0.9
+        self.cfg["dataset_split_ratio"] = 90
         self.cfg["output_folder"] = os.path.dirname(os.path.realpath(__file__)) + "/runs/"
         self.cfg["eval_period"] = 1
         plugin_folder = os.path.dirname(os.path.realpath(__file__))
@@ -89,6 +134,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         dnntrain.TrainProcess.__init__(self, name, param)
 
         # Create parameters class
+        self.output_dir = None
         self.stop_train = False
         if param is None:
             self.set_param_object(TrainMmlabDetectionParam())
@@ -118,165 +164,144 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
         tb_logdir = os.path.join(ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
 
-        split = param.cfg["dataset_split_ratio"]
+        split = param.cfg["dataset_split_ratio"] / 100
 
-        prepare_dataset(ikdataset.data, plugin_folder, split)
+        # Output directory
+        self.output_dir = os.path.join(param.cfg["output_folder"], str_datetime)
+        os.makedirs(self.output_dir, exist_ok=True)
+
+        prepare_dataset(ikdataset.data, param.cfg["dataset_folder"], split)
+
         register_mmlab_modules()
         if param.cfg["use_custom_model"]:
             config = param.cfg["config"]
             cfg = Config.fromfile(config)
         else:
-            config = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", param.cfg["model_name"],
-                                  param.cfg["model_config"] + '.py')
+            config = os.path.join(os.path.dirname(os.path.abspath(__file__)), param.cfg["model_config"])
             cfg = Config.fromfile(config)
             # scale lr
-            cfg.optimizer.lr = cfg.optimizer.lr / 64 * param.cfg["batch_size"]
 
-        classes = list(ikdataset.data["metadata"]["category_names"].values())
-        search_and_modify_cfg(cfg, "num_classes", len(classes))
-        cfg.work_dir = repr(os.path.join(plugin_folder, "runs", str_datetime))[1:-1]
-        eval_period = param.cfg["eval_period"]
-        cfg.load_from = param.cfg["model_url"]
-        cfg.log_config = dict(
-            interval=5,
+            classes = list(ikdataset.data["metadata"]["category_names"].values())
+            search_and_modify_cfg(cfg, "num_classes", len(classes))
+            cfg.work_dir = self.output_dir
 
-            hooks=[
-                dict(type='TextLoggerHook'),
-                dict(type='TensorboardLoggerHook',
-                     log_dir=repr(tb_logdir)[1:-1])
-            ])
-        cfg.total_epochs = cfg.max_epochs = cfg.runner.max_epochs = param.cfg["epochs"]
+            eval_period = param.cfg["eval_period"]
 
-        cfg.evaluation = dict(interval=eval_period, metric="bbox", save_best="auto",
-                              rule="greater")
-        cfg.dataset_type = "CocoDataset"
-        cfg.data_root = None
-        cfg.device = 'cuda'
-        cfg.train_dataset = dict(
-            type='MultiImageMixDataset',
-            dataset=dict(
-                type=cfg.dataset_type,
-                classes=classes,
-                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_train.json'))[1:-1],
-                img_prefix=None,
-                pipeline=[
-                    dict(type='LoadImageFromFile'),
-                    dict(type='LoadAnnotations', with_bbox=True)
-                ],
-                filter_empty_gt=False,
-            ),
-            pipeline=cfg.train_pipeline)
+            train_dataset = dict(
+                # use MultiImageMixDataset wrapper to support mosaic and mixup
+                type='MultiImageMixDataset',
+                dataset=dict(
+                    metainfo=dict(classes=classes),
+                    type="CocoDataset",
+                    ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_train.json'),
+                    data_prefix=dict(img=''),
+                    pipeline=[
+                        dict(type='LoadImageFromFile', backend_args=None),
+                        dict(type='LoadAnnotations', with_bbox=True)
+                    ],
+                    filter_cfg=dict(filter_empty_gt=False, min_size=32),
+                    backend_args=None),
+                pipeline=cfg.train_pipeline)
 
-        cfg.data = dict(
-            samples_per_gpu=param.cfg["batch_size"],
-            workers_per_gpu=0,
-            train=cfg.train_dataset,
-            test=dict(
-                type=cfg.dataset_type,
-                classes=classes,
-                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_test.json'))[1:-1],
-                img_prefix=None,
-                pipeline=cfg.test_pipeline),
-            val=dict(
-                type=cfg.dataset_type,
-                classes=classes,
-                ann_file=repr(os.path.join(plugin_folder, 'dataset', 'instances_test.json'))[1:-1],
-                img_prefix=None,
-                pipeline=cfg.test_pipeline))
+            test_dataset = dict(
+                # use MultiImageMixDataset wrapper to support mosaic and mixup
+                type='MultiImageMixDataset',
+                dataset=dict(
+                    type="CocoDataset",
+                    metainfo= dict(classes=classes),
+                    ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_test.json'),
+                    data_prefix=dict(img=''),
+                    pipeline=[
+                        dict(type='LoadImageFromFile', backend_args=None),
+                        dict(type='LoadAnnotations', with_bbox=True)
+                    ],
+                    filter_cfg=dict(filter_empty_gt=False, min_size=32),
+                    backend_args=None),
+                pipeline=cfg.test_pipeline)
 
-        cfg.data.test_dataloader = dict(samples_per_gpu=1)
+            cfg.train_dataloader.dataset = train_dataset
+            cfg.test_dataloader.dataset = test_dataset
+            cfg.val_dataloader.dataset = test_dataset
 
-        gpus = 1
-        launcher = "none"
-        seed = None
-        deterministic = True
-        no_validate = cfg.evaluation.interval <= 0
+            cfg.train_dataloader.batch_size = param.cfg["batch_size"]
+            cfg.train_dataloader.num_workers = 0
+            cfg.train_dataloader.persistent_workers = False
+
+            cfg.test_dataloader.batch_size = param.cfg["batch_size"]
+            cfg.test_dataloader.num_workers = 0
+            cfg.test_dataloader.persistent_workers = False
+
+            cfg.val_dataloader.batch_size = param.cfg["batch_size"]
+            cfg.val_dataloader.num_workers = 0
+            cfg.val_dataloader.persistent_workers = False
+
+            cfg.load_from = param.cfg["model_url"]
+
+            cfg.train_cfg.max_epochs = param.cfg["epochs"]
+            cfg.train_cfg.val_interval = eval_period
+
+            cfg.val_evaluator = dict(
+                type='CocoMetric',
+                ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_test.json'),
+                metric='bbox', #'segm' for segmentation metric
+                backend_args=None)
+            cfg.test_evaluator = cfg.val_evaluator
+
+        amp = True
+        # save only best and last checkpoint
         cfg.checkpoint_config = None
+        if "checkpoint" in cfg.default_hooks:
+            cfg.default_hooks.checkpoint["interval"] = -1
+            cfg.default_hooks.checkpoint["save_best"] = 'coco/bbox_mAP'
+            cfg.default_hooks.checkpoint["rule"] = 'greater'
 
-        # import modules from string list.
-        if cfg.get('custom_imports', None):
-            from mmcv.utils import import_modules_from_strings
+        cfg.visualizer.vis_backends = [dict(type='TensorboardVisBackend', save_dir=tb_logdir)]
 
-            import_modules_from_strings(**cfg['custom_imports'])
-        # set cudnn_benchmark
-        if cfg.get('cudnn_benchmark', False):
-            torch.backends.cudnn.benchmark = True
+        try:
+            visualizer = Visualizer.get_current_instance()
+        except:
+            visualizer = cfg.get('visualizer')
 
-        cfg.gpu_ids = range(1) if gpus is None else range(gpus)
-        # init distributed env first, since logger depends on the dist info.
-        if launcher == 'none':
-            distributed = False
-        else:
-            distributed = True
-            init_dist(launcher, **cfg.dist_params)
-            # re-set gpu_ids with distributed training mode
-            _, world_size = get_dist_info()
-            cfg.gpu_ids = range(world_size)
+        # register all modules in mmdet into the registries
+        # do not init the default scope here because it will be init in the runner
+        try:
+            register_all_modules(init_default_scope=False)
+        except:
+            pass
 
-        # create work_dir
-        mmcv.mkdir_or_exist(os.path.abspath(cfg.work_dir))
+        # enable automatic-mixed-precision training
+        if amp:
+            optim_wrapper = cfg.optim_wrapper.type
+            if optim_wrapper == 'AmpOptimWrapper':
+                print_log(
+                    'AMP training is already enabled in your config.',
+                    logger='current',
+                    level=logging.WARNING)
+            else:
+                assert optim_wrapper == 'OptimWrapper', (
+                    '`--amp` is only supported when the optimizer wrapper type is '
+                    f'`OptimWrapper` but got {optim_wrapper}.')
+                cfg.optim_wrapper.type = 'AmpOptimWrapper'
+                cfg.optim_wrapper.loss_scale = 'dynamic'
 
-        # dump config
-        cfg.dump(repr(os.path.abspath(os.path.join(cfg.work_dir, os.path.basename(config))))[1:-1])
-
-        # init the logger before other steps
-        timestamp = str_datetime
-
-        # init the meta dict to record some important information such as
-        # environment info and seed, which will be logged
-        meta = dict()
-        # log env info
-        env_info_dict = collect_env()
-        env_info = '\n'.join([(f'{k}: {v}') for k, v in env_info_dict.items()])
-        dash_line = '-' * 60 + '\n'
-        logger.info('Environment info:\n' + dash_line + env_info + '\n' +
-                    dash_line)
-        meta['env_info'] = env_info
-        meta['config'] = cfg.pretty_text
-        # log some basic info
-        logger.info(f'Distributed training: {distributed}')
-        logger.info(f'Config:\n{cfg.pretty_text}')
-
-        # set random seeds
-        if seed is not None:
-            logger.info(f'Set random seed to {seed}, '
-                        f'deterministic: {deterministic}')
-            set_random_seed(seed, deterministic=deterministic)
-        cfg.seed = seed
-        meta['seed'] = seed
-        meta['exp_name'] = os.path.basename(config)
-
-        datasets = [build_dataset(cfg.data.train)]
-
-        cfg.custom_hooks = [
-            dict(type='CustomHook', stop=self.get_stop, output_folder=cfg.work_dir,
+        custom_hooks = [
+            dict(type='CustomHook', stop=self.get_stop, output_folder=str(self.output_folder),
                  emit_step_progress=self.emit_step_progress, priority='LOWEST'),
-            dict(type='CustomMlflowLoggerHook', log_metrics=self.log_metrics)
+            dict(type='CustomLoggerHook', log_metrics=self.log_metrics)
         ]
 
-        model = build_detector(
-            cfg.model,
-            train_cfg=cfg.get('train_cfg'),
-            test_cfg=cfg.get('test_cfg'))
-        model.init_weights()
+        # build the runner from config
+        runner = MyRunner.from_custom_cfg(cfg, custom_hooks, visualizer)
 
-        # add an attribute for visualization convenience
-        model.CLASSES = datasets[0].CLASSES
-        try:
-            train_detector(
-                model,
-                datasets,
-                cfg,
-                distributed=distributed,
-                validate=(not no_validate),
-                timestamp=timestamp,
-                meta=meta)
-        except UserStop:
-            logger.info("Training stopped by user")
+        # add custom hook to stop process and save the latest model each epoch
 
-        # Step progress bar:
-        self.emit_step_progress()
+        runner.cfg = cfg
 
+        print("Start training")
+        # start training
+        runner.train()
+
+        print("Training finished!")
         # Call end_task_run to finalize process
         self.end_task_run()
 

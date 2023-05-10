@@ -64,9 +64,9 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
 
         self.spin_epochs = pyqtutils.append_spin(self.gridLayout, "Epochs", self.parameters.cfg["epochs"])
         self.spin_batch_size = pyqtutils.append_spin(self.gridLayout, "Batch size", self.parameters.cfg["batch_size"])
-        self.spin_dataset_percentage = pyqtutils.append_double_spin(self.gridLayout, "Split train/test (%)",
+        self.spin_dataset_percentage = pyqtutils.append_spin(self.gridLayout, "Split train/test (%)",
                                                              self.parameters.cfg["dataset_split_ratio"],
-                                                             min=0.1, max=1, decimals=2, step=0.1)
+                                                             min=1, max=100, step=1)
         self.spin_eval_period = pyqtutils.append_spin(self.gridLayout, "Eval period",
                                                       self.parameters.cfg["eval_period"])
         self.browse_output_folder = pyqtutils.append_browse_file(self.gridLayout, "Output folder",
@@ -85,22 +85,22 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
         # Set widget layout
         self.set_layout(layout_ptr)
 
-    def on_model_changed(self, s):
+    def on_model_changed(self, i):
         self.combo_config.clear()
         model = self.combo_model.currentText()
         yaml_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", model, "metafile.yml")
-        if not os.path.isfile(yaml_file):
-            return
-        with open(yaml_file, "r") as f:
-            models_list = yaml.load(f, Loader=yaml.FullLoader)['Models']
+        if os.path.isfile(yaml_file):
+            with open(yaml_file, "r") as f:
+                models_list = yaml.load(f, Loader=yaml.FullLoader)['Models']
 
-        self.available_cfg_ckpt = {model_dict["Name"]: {'cfg': model_dict["Config"], 'ckpt': model_dict["Weights"]}
-                                   for
-                                   model_dict in models_list if "Weights" in model_dict}
-        for experiment_name in self.available_cfg_ckpt.keys():
-            self.combo_config.addItem(experiment_name)
-        self.combo_config.setCurrentText(list(self.available_cfg_ckpt.keys())[0])
-
+            self.available_cfg_ckpt = {model_dict["Config"]: model_dict["Weights"] for
+                                       model_dict in models_list
+                                       if "Weights" in model_dict and True in
+                                       [res['Task'] in ['Panoptic Segmentation', 'Instance Segmentation', 'Object Detection']
+                                        for res in model_dict["Results"]]}
+            for cfg in self.available_cfg_ckpt.keys():
+                self.combo_config.addItem(cfg)
+            self.combo_config.setCurrentText(list(self.available_cfg_ckpt.keys())[0])
     def on_apply(self):
         # Apply button clicked slot
 
@@ -108,7 +108,7 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
         # Example : self.parameters.windowSize = self.spinWindowSize.value()
         self.parameters.cfg["model_config"] = self.combo_config.currentText()
         self.parameters.cfg["model_name"] = self.combo_model.currentText()
-        self.parameters.cfg["model_url"] = self.available_cfg_ckpt[self.parameters.cfg["model_config"]]['ckpt']
+        self.parameters.cfg["model_url"] = self.available_cfg_ckpt[self.parameters.cfg["model_config"]]
         self.parameters.cfg["batch_size"] = self.spin_batch_size.value()
         self.parameters.cfg["epochs"] = self.spin_epochs.value()
         self.parameters.cfg["eval_period"] = self.spin_eval_period.value()
