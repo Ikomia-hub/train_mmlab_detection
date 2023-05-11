@@ -60,7 +60,7 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
 
         self.combo_model.setCurrentText(self.parameters.cfg["model_name"])
 
-        self.combo_config.setCurrentText(self.parameters.cfg["model_config"])
+        self.combo_config.setCurrentText(self.parameters.cfg["cfg"])
 
         self.spin_epochs = pyqtutils.append_spin(self.gridLayout, "Epochs", self.parameters.cfg["epochs"])
         self.spin_batch_size = pyqtutils.append_spin(self.gridLayout, "Batch size", self.parameters.cfg["batch_size"])
@@ -76,9 +76,9 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
                                                                   path=self.parameters.cfg["dataset_folder"],
                                                                   mode=QFileDialog.Directory)
         self.check_expert_mode = pyqtutils.append_check(self.gridLayout, "Expert mode",
-                                                        self.parameters.cfg["use_custom_model"])
+                                                        self.parameters.cfg["use_expert_mode"])
         self.browse_custom_config = pyqtutils.append_browse_file(self.gridLayout, "Custom config",
-                                                                 path=self.parameters.cfg["config"])
+                                                                 path=self.parameters.cfg["config_file"])
         # PyQt -> Qt wrapping
         layout_ptr = qtconversion.PyQtToQt(self.gridLayout)
 
@@ -106,17 +106,17 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
 
         # Get parameters from widget
         # Example : self.parameters.windowSize = self.spinWindowSize.value()
-        self.parameters.cfg["model_config"] = self.combo_config.currentText()
+        self.parameters.cfg["cfg"] = self.combo_config.currentText()
         self.parameters.cfg["model_name"] = self.combo_model.currentText()
-        self.parameters.cfg["model_url"] = self.available_cfg_ckpt[self.parameters.cfg["model_config"]]
+        self.parameters.cfg["model_weight_file"] = self.available_cfg_ckpt[self.parameters.cfg["cfg"]]
         self.parameters.cfg["batch_size"] = self.spin_batch_size.value()
         self.parameters.cfg["epochs"] = self.spin_epochs.value()
         self.parameters.cfg["eval_period"] = self.spin_eval_period.value()
         self.parameters.cfg["dataset_split_ratio"] = self.spin_dataset_percentage.value()
         self.parameters.cfg["output_folder"] = self.browse_output_folder.path
         self.parameters.cfg["dataset_folder"] = self.browse_dataset_folder.path
-        self.parameters.cfg["use_custom_model"] = self.check_expert_mode.isChecked()
-        self.parameters.cfg["config"] = self.browse_custom_config.path
+        self.parameters.cfg["use_expert_mode"] = self.check_expert_mode.isChecked()
+        self.parameters.cfg["config_file"] = self.browse_custom_config.path
 
         # Send signal to launch the process
         self.emit_apply(self.parameters)

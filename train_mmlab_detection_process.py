@@ -96,9 +96,9 @@ class TrainMmlabDetectionParam(TaskParam):
     def __init__(self):
         TaskParam.__init__(self)
         # Place default value initialization here
-        self.cfg["model_config"] = "configs/yolox/yolox_s_8xb8-300e_coco.py"
+        self.cfg["cfg"] = "configs/yolox/yolox_s_8xb8-300e_coco.py"
         self.cfg["model_name"] = "yolox"
-        self.cfg["model_url"] = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/" \
+        self.cfg["model_weight_file"] = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/" \
                          "yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"
         self.cfg["epochs"] = 10
         self.cfg["batch_size"] = 2
@@ -107,21 +107,21 @@ class TrainMmlabDetectionParam(TaskParam):
         self.cfg["eval_period"] = 1
         plugin_folder = os.path.dirname(os.path.realpath(__file__))
         self.cfg["dataset_folder"] = os.path.join(plugin_folder, 'dataset')
-        self.cfg["use_custom_model"] = False
-        self.cfg["config"] = ""
+        self.cfg["use_expert_mode"] = False
+        self.cfg["config_file"] = ""
 
     def set_values(self, param_map):
         self.cfg["model_name"] = param_map["model_name"]
-        self.cfg["model_url"] = param_map["model_url"]
-        self.cfg["model_config"] = param_map["model_config"]
+        self.cfg["model_weight_file"] = param_map["model_weight_file"]
+        self.cfg["cfg"] = param_map["cfg"]
         self.cfg["epochs"] = int(param_map["epochs"])
         self.cfg["batch_size"] = int(param_map["batch_size"])
         self.cfg["dataset_split_ratio"] = int(param_map["dataset_split_ratio"])
         self.cfg["output_folder"] = param_map["output_folder"]
         self.cfg["eval_period"] = int(param_map["eval_period"])
         self.cfg["dataset_folder"] = param_map["dataset_folder"]
-        self.cfg["use_custom_model"] = utils.strtobool(param_map["use_custom_model"])
-        self.cfg["config"] = param_map["config"]
+        self.cfg["use_expert_mode"] = utils.strtobool(param_map["use_expert_mode"])
+        self.cfg["config_file"] = param_map["config_file"]
 
 
 # --------------------
@@ -173,11 +173,14 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         prepare_dataset(ikdataset.data, param.cfg["dataset_folder"], split)
 
         register_mmlab_modules()
-        if param.cfg["use_custom_model"]:
-            config = param.cfg["config"]
+        if param.cfg["use_expert_mode"]:
+            config = param.cfg["config_file"]
             cfg = Config.fromfile(config)
         else:
-            config = os.path.join(os.path.dirname(os.path.abspath(__file__)), param.cfg["model_config"])
+            if os.path.isfile(param.cfg["config_file"]):
+                config = param.cfg["config_file"]
+            else:
+                config = os.path.join(os.path.dirname(os.path.abspath(__file__)), param.cfg["cfg"])
             cfg = Config.fromfile(config)
             # scale lr
 
@@ -235,7 +238,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             cfg.val_dataloader.num_workers = 0
             cfg.val_dataloader.persistent_workers = False
 
-            cfg.load_from = param.cfg["model_url"]
+            cfg.load_from = param.cfg["model_weight_file"]
 
             cfg.train_cfg.max_epochs = param.cfg["epochs"]
             cfg.train_cfg.val_interval = eval_period
