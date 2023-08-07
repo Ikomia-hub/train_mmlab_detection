@@ -10,7 +10,7 @@ def test(t, data_dict):
     params = t.get_parameters()
     params["epochs"] = "2"
     params["batch_size"] = "1"
-    params["dataset_split_ratio"] = "0.5"
+    params["dataset_split_ratio"] = "50"
     t.set_parameters(params)
     input_dataset.load(data_dict["datasets"]["detection"]["dataset_coco"])
     yield run_for_test(t)
