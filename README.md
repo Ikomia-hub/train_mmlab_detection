@@ -19,10 +19,9 @@
     </a> 
 </p>
 
-Train for MMLAB detection models
+Train for OpenMMLab detection models.
+![mmdet illustration](https://user-images.githubusercontent.com/12907710/187674113-2074d658-f2fb-42d1-ac15-9c4a695e64d7.png)
 
-[Insert illustrative image here. Image must be accessible publicly, in algorithm Github repository for example.
-<img src="images/illustration.png"  alt="Illustrative image" width="30%" height="30%">]
 
 ## :rocket: Use with Ikomia API
 
@@ -36,20 +35,27 @@ pip install ikomia
 
 #### 2. Create your workflow
 
-[Change the sample image URL to fit algorithm purpose]
 
 ```python
-import ikomia
 from ikomia.dataprocess.workflow import Workflow
 
 # Init your workflow
-wf = Workflow()
+wf = Workflow()    
 
-# Add algorithm
-algo = wf.add_task(name="train_mmlab_detection", auto_connect=True)
+# Add dataset loader
+coco = wf.add_task(name="dataset_coco")
 
-# Run on your image  
-wf.run_on(url="example_image.png")
+coco.set_parameters({
+    "json_file": "path/to/annotation/file.json",
+    "image_folder": "path/to/image/folder",
+    "task": "detection",
+}) 
+
+# Add train algorithm
+train = wf.add_task(name="train_mmlab_detection", auto_connect=True)
+
+# Launch your training on your data
+wf.run()
 ```
 
 ## :sunny: Use with Ikomia Studio
@@ -62,56 +68,45 @@ Ikomia Studio offers a friendly UI with the same features as the API.
 
 ## :pencil: Set algorithm parameters
 
-[Explain each algorithm parameters]
+- **model_weight_file** (str, *optional*): Path to model weights file .pth or URL. 
+- **config_file** (str, *optional*): Path to the .yaml config file.
+- **epochs** (int) - default '10': Number of complete passes through the training dataset.
+- **batch_size** (int) - default '2': Number of samples processed before the model is updated.
+- **dataset_split_ratio** (int) – default '90' ]0, 100[: Divide the dataset into train and evaluation sets.
+- **eval_period** (int) - default '1': Interval between evalutions.  
+- **output_folder** (str, *optional*): path to where the model will be saved. 
 
-[Change the sample image URL to fit algorithm purpose]
+
+**Parameters** should be in **strings format**  when added to the dictionary.
+
 
 ```python
-import ikomia
 from ikomia.dataprocess.workflow import Workflow
 
 # Init your workflow
-wf = Workflow()
+wf = Workflow()    
 
-# Add algorithm
-algo = wf.add_task(name="train_mmlab_detection", auto_connect=True)
+# Add dataset loader
+coco = wf.add_task(name="dataset_coco")
 
-algo.set_parameters({
-    "param1": "value1",
-    "param2": "value2",
-    ...
-})
+coco.set_parameters({
+    "json_file": "path/to/annotation/file.json",
+    "image_folder": "path/to/image/folder",
+    "task": "detection",
+}) 
 
-# Run on your image  
-wf.run_on(url="example_image.png")
+# Add train algorithm
+train = wf.add_task(name="train_mmlab_detection", auto_connect=True)
+train.set_parameters({
+    "epochs": "5",
+    "batch_size": "2",
+    "dataset_split_ratio": "90",
+    "eval_period": "1"
+}) 
 
+# Launch your training on your data
+wf.run()
 ```
 
-## :mag: Explore algorithm outputs
 
-Every algorithm produces specific outputs, yet they can be explored them the same way using the Ikomia API. For a more in-depth understanding of managing algorithm outputs, please refer to the [documentation](https://ikomia-dev.github.io/python-api-documentation/advanced_guide/IO_management.html).
 
-```python
-import ikomia
-from ikomia.dataprocess.workflow import Workflow
-
-# Init your workflow
-wf = Workflow()
-
-# Add algorithm
-algo = wf.add_task(name="train_mmlab_detection", auto_connect=True)
-
-# Run on your image  
-wf.run_on(url="example_image.png")
-
-# Iterate over outputs
-for output in algo.get_outputs()
-    # Print information
-    print(output)
-    # Export it to JSON
-    output.to_json()
-```
-
-## :fast_forward: Advanced usage 
-
-[optional]
