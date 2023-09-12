@@ -69,7 +69,7 @@ Ikomia Studio offers a friendly UI with the same features as the API.
 ## :pencil: Set algorithm parameters
 
 - **model_weight_file** (str, *optional*): Path to model weights file .pth or URL. 
-- **config_file** (str, *optional*): Path to the .yaml config file.
+- **config_file** (str, *optional*): Path to the .py config file.
 - **epochs** (int) - default '10': Number of complete passes through the training dataset.
 - **batch_size** (int) - default '2': Number of samples processed before the model is updated.
 - **dataset_split_ratio** (int) – default '90' ]0, 100[: Divide the dataset into train and evaluation sets.
