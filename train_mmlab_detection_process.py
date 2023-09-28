@@ -327,7 +327,6 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         # Set process information as string here
         self.info.name = "train_mmlab_detection"
         self.info.short_description = "Train for MMLAB detection models"
-        self.info.description = "Train for MMLAB detection models"
         # relative path -> as displayed in Ikomia application process tree
         self.info.path = "Plugins/Python/Detection"
         self.info.icon_path = "icons/mmlab.png"
@@ -346,7 +345,8 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         # URL of documentation
         self.info.documentation_link = "https://mmdetection.readthedocs.io/en/latest/"
         # Code source repository
-        self.info.repository = "https://github.com/open-mmlab/mmdetection"
+        self.info.repository = "https://github.com/Ikomia-hub/train_mmlab_detection"
+        self.info.original_repository = "https://github.com/open-mmlab/mmdetection"
         # Keywords used for search
         self.info.keywords = "train, mmlab, mmdet, detection"
 
