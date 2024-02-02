@@ -1,4 +1,4 @@
 --find-links https://download.openmmlab.com/mmcv/dist/cu116/torch1.13/index.html
-mmcv==2.0.0; python_version >= "3.10"
-mmdet==3.0.0; python_version >= "3.10"
-mmengine==0.7.1; python_version >= "3.10"
+mmcv==2.0.0; python_version == "3.10"
+mmdet==3.0.0; python_version == "3.10"
+mmengine==0.7.1; python_version == "3.10"
