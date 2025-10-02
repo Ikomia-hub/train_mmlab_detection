@@ -1,0 +1,13 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.3.1
+torchvision==0.18.1
+
+git+https://github.com/cocodataset/panopticapi.git
+
+--find-links https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
+mmcv==2.2.0
+mmengine==0.10.7
+# mmdetection -> from source to fix dependency lock with version 3.3.0 (mmcv < 2.2.0)
+git+https://github.com/Ikomia-dev/mmdetection.git
+
+pillow>=11.0.0, <12.0.0
