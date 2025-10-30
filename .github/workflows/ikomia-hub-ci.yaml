@@ -1,0 +1,127 @@
+name: Ikomia HUB CI
+
+on:
+  push:
+    branches:
+      - production
+      - main
+  pull_request_review:
+    types: [submitted]
+  schedule:
+    - cron: "0 0 * * 1"  # Every Monday at 00:00
+  workflow_dispatch:
+    inputs:
+      wait:
+        description: 'Wait for the CI to finish'
+        type: boolean
+        default: true
+      send_webhook_on_success:
+        description: 'Send a Discord webhook on success'
+        type: boolean
+        default: false
+      send_webhook_on_failure:
+        description: 'Send a Discord webhook on failure'
+        type: boolean
+        default: false
+      push_on_success:
+        description: 'Push to Ikomia HUB on success'
+        type: boolean
+        default: false
+      
+permissions:
+  contents: read
+
+# It's recommended to put these secrets at the organization level
+env:
+  IKOMIA_HUB_CI_DISCORD_WEBHOOK: ${{ secrets.IKOMIA_HUB_CI_DISCORD_WEBHOOK }}
+  IKOMIA_HUB_CI_SCW_LOKI_TOKEN: ${{ secrets.IKOMIA_HUB_CI_SCW_LOKI_TOKEN }}
+  IKOMIA_TOKEN: ${{ secrets.IKOMIA_HUB_CI_IKOMIA_TOKEN }}
+  SCW_ACCESS_KEY: ${{ secrets.IKOMIA_HUB_CI_SCW_ACCESS_KEY }}
+  SCW_SECRET_KEY: ${{ secrets.IKOMIA_HUB_CI_SCW_SECRET_KEY }}
+  SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.IKOMIA_HUB_CI_SCW_DEFAULT_ORGANIZATION_ID }}
+  SCW_DEFAULT_PROJECT_ID: ${{ secrets.IKOMIA_HUB_CI_SCW_DEFAULT_PROJECT_ID }}
+  SCW_DEFAULT_REGION: fr-par
+  UV_INDEX_URL: ${{ secrets.IKOMIA_HUB_CI_INDEX_URL }}
+
+jobs:
+  run:
+    # Only run on PR review if the review is approved
+    if: github.event_name != 'pull_request_review' || github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Configure CI
+        id: configure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          EVENT="${{ github.event_name }}"
+
+          RUN_URL="${{ github.repositoryUrl }}"
+          RUN_COMMIT="${{ github.sha }}"
+          RUN_USE_IKOMIA_REGISTRY="True"
+          RUN_WAIT="True"
+          RUN_WEBHOOK_ON_SUCCESS="False"
+          RUN_WEBHOOK_ON_FAILURE="True"
+          RUN_PUSH_ON_SUCCESS="False"
+
+          if [ "${{ github.ref }}" = "refs/heads/production" ]; then
+            RUN_USE_IKOMIA_REGISTRY="False"  # Use PyPI registry for production branch
+          fi
+
+          if [ "$EVENT" = "push" ]; then
+            if [ "${{ github.ref }}" = "refs/heads/production" ]; then
+              RUN_PUSH_ON_SUCCESS="True"
+            fi
+          fi
+
+          if [ "$EVENT" = "pull_request_review" ]; then
+            RUN_URL="${{ github.event.pull_request.head.repo.clone_url }}"
+            RUN_COMMIT="${{ github.event.pull_request.head.sha }}"
+            RUN_WEBHOOK_ON_FAILURE="False"  # Don't send discord message on pr reviews
+          fi
+
+          if [ "$EVENT" = "schedule" ]; then
+            RUN_WAIT="False"  # Don't wait on cron jobs
+          fi
+
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.wait }}" = "false" ]; then
+              RUN_WAIT="False"
+            fi
+            if [ "${{ github.event.inputs.send_webhook_on_success }}" = "true" ]; then
+              RUN_WEBHOOK_ON_SUCCESS="True"
+            fi
+            if [ "${{ github.event.inputs.send_webhook_on_failure }}" = "false" ]; then
+              RUN_WEBHOOK_ON_FAILURE="False"
+            fi
+            if [ "${{ github.event.inputs.push_on_success }}" = "true" ]; then
+              RUN_PUSH_ON_SUCCESS="True"
+            fi
+          fi
+
+          echo "run_url=$RUN_URL" >> "$GITHUB_OUTPUT"
+          echo "run_commit=$RUN_COMMIT" >> "$GITHUB_OUTPUT"
+          echo "run_use_ikomia_registry=$RUN_USE_IKOMIA_REGISTRY" >> "$GITHUB_OUTPUT"
+          echo "run_wait=$RUN_WAIT" >> "$GITHUB_OUTPUT"
+          echo "run_webhook_on_success=$RUN_WEBHOOK_ON_SUCCESS" >> "$GITHUB_OUTPUT"
+          echo "run_webhook_on_failure=$RUN_WEBHOOK_ON_FAILURE" >> "$GITHUB_OUTPUT"
+          echo "run_push_on_success=$RUN_PUSH_ON_SUCCESS" >> "$GITHUB_OUTPUT"
+
+      - name: Run Ikomia HUB CI
+        run: uvx "ikomia-hub-ci[scaleway]" scaleway test
+        env:
+          IKOMIA_HUB_CI_URL: ${{ steps.configure.outputs.run_url }}
+          IKOMIA_HUB_CI_COMMIT: ${{ steps.configure.outputs.run_commit }}
+          IKOMIA_HUB_CI_USE_IKOMIA_REGISTRY: ${{ steps.configure.outputs.run_use_ikomia_registry }}
+          IKOMIA_HUB_CI_WAIT: ${{ steps.configure.outputs.run_wait }}
+          IKOMIA_HUB_CI_DISCORD_WEBHOOK_ON_SUCCESS: ${{ steps.configure.outputs.run_webhook_on_success }}
+          IKOMIA_HUB_CI_DISCORD_WEBHOOK_ON_FAILURE: ${{ steps.configure.outputs.run_webhook_on_failure }}
+          IKOMIA_HUB_CI_PUSH_ON_SUCCESS: ${{ steps.configure.outputs.run_push_on_success }}
+          IKOMIA_HUB_CI_PYTHON: "3.9 3.10 3.11"  # --- Don't support 3.12 yet ---
