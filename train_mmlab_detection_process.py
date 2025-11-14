@@ -15,30 +15,29 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+import copy
+import os
+import logging
+from typing import Union, Dict
+from datetime import datetime
 
 from ikomia import core, dataprocess, utils
 from ikomia.core.task import TaskParam
 from ikomia.dnn import dnntrain
 from ikomia.core import config as ikcfg
 
-import copy
-from typing import Union, Dict
 from mmengine.config import Config, ConfigDict
 from mmengine.logging import print_log
 from mmengine.runner import Runner
 from mmengine.visualization import Visualizer
 from mmdet.utils import register_all_modules
-ConfigType = Union[Dict, Config, ConfigDict]
 
-import os
-from train_mmlab_detection.utils import prepare_dataset, UserStop, register_mmlab_modules, search_and_modify_cfg
-from datetime import datetime
-import logging
+from train_mmlab_detection.utils import prepare_dataset, register_mmlab_modules, search_and_modify_cfg
+
 
 logger = logging.getLogger()
+ConfigType = Union[Dict, Config, ConfigDict]
 
-
-# Your imports below
 
 class MyRunner(Runner):
 
@@ -83,7 +82,6 @@ class MyRunner(Runner):
             experiment_name=cfg.get('experiment_name'),
             cfg=cfg,
         )
-
         return runner
 
 
@@ -136,6 +134,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         # Create parameters class
         self.output_dir = None
         self.stop_train = False
+
         if param is None:
             self.set_param_object(TrainMmlabDetectionParam())
         else:
@@ -152,18 +151,11 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         # Call begin_task_run for initialization
         self.begin_task_run()
         self.stop_train = False
-        # Examples :
         # Get input :
         ikdataset = self.get_input(0)
-
-        plugin_folder = os.path.dirname(os.path.abspath(__file__))
-
         param = self.get_param_object()
-
         str_datetime = datetime.now().strftime("%d-%m-%YT%Hh%Mm%Ss")
-
         tb_logdir = os.path.join(ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
-
         split = param.cfg["dataset_split_ratio"] / 100
 
         # Output directory
@@ -171,8 +163,8 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         os.makedirs(self.output_dir, exist_ok=True)
 
         prepare_dataset(ikdataset.data, param.cfg["dataset_folder"], split)
-
         register_mmlab_modules()
+
         if param.cfg["use_expert_mode"]:
             config = param.cfg["config_file"]
             cfg = Config.fromfile(config)
@@ -181,13 +173,11 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
                 config = param.cfg["config_file"]
             else:
                 config = os.path.join(os.path.dirname(os.path.abspath(__file__)), param.cfg["cfg"])
-            cfg = Config.fromfile(config)
-            # scale lr
 
+            cfg = Config.fromfile(config)
             classes = list(ikdataset.data["metadata"]["category_names"].values())
             search_and_modify_cfg(cfg, "num_classes", len(classes))
             cfg.work_dir = self.output_dir
-
             eval_period = param.cfg["eval_period"]
 
             train_dataset = dict(
@@ -253,6 +243,7 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         amp = True
         # save only best and last checkpoint
         cfg.checkpoint_config = None
+
         if "checkpoint" in cfg.default_hooks:
             cfg.default_hooks.checkpoint["interval"] = -1
             cfg.default_hooks.checkpoint["save_best"] = 'coco/bbox_mAP'
@@ -297,7 +288,6 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         runner = MyRunner.from_custom_cfg(cfg, custom_hooks, visualizer)
 
         # add custom hook to stop process and save the latest model each epoch
-
         runner.cfg = cfg
 
         print("Start training")
@@ -330,7 +320,10 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         # relative path -> as displayed in Ikomia application process tree
         self.info.path = "Plugins/Python/Detection"
         self.info.icon_path = "icons/mmlab.png"
-        self.info.version = "1.1.0"
+        self.info.version = "1.2.0"
+        self.info.max_python_version = "3.9"
+        self.info.max_python_version = "3.11"
+        self.info.min_ikomia_version = "0.15.0"
         # self.info.icon_path = "your path to a specific icon"
         self.info.authors = "Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and" \
                             "Xiong, Yu and Li, Xiaoxiao and Sun, Shuyang and Feng, Wansen and" \
@@ -351,6 +344,10 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         self.info.keywords = "train, mmlab, mmdet, detection"
         self.info.algo_type = core.AlgoType.TRAIN
         self.info.algo_tasks = "OBJECT_DETECTION"
+        self.info.hardware_config.min_cpu = 4
+        self.info.hardware_config.min_ram = 16
+        self.info.hardware_config.gpu_required = True
+        self.info.hardware_config.min_vram = 16
 
     def create(self, param=None):
         # Create process object

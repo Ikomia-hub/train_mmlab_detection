@@ -1,4 +1,7 @@
---find-links https://download.openmmlab.com/mmcv/dist/cu116/torch1.13/index.html
-mmcv==2.0.0; python_version == "3.10"
-mmdet==3.0.0; python_version == "3.10"
-mmengine==0.7.1; python_version == "3.10"
+git+https://github.com/cocodataset/panopticapi.git
+
+--find-links https://download.openmmlab.com/mmcv/dist/cu121/torch2.3/index.html
+mmcv==2.2.0
+mmengine==0.10.7
+# mmdetection -> from source to fix dependency lock with version 3.3.0 (mmcv < 2.2.0)
+git+https://github.com/Ikomia-dev/mmdetection.git
