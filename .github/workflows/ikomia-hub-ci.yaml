@@ -124,4 +124,4 @@ jobs:
           IKOMIA_HUB_CI_DISCORD_WEBHOOK_ON_SUCCESS: ${{ steps.configure.outputs.run_webhook_on_success }}
           IKOMIA_HUB_CI_DISCORD_WEBHOOK_ON_FAILURE: ${{ steps.configure.outputs.run_webhook_on_failure }}
           IKOMIA_HUB_CI_PUSH_ON_SUCCESS: ${{ steps.configure.outputs.run_push_on_success }}
-          IKOMIA_HUB_CI_PYTHON: "3.9 3.10 3.11"  # --- Don't support 3.12 yet ---
+          # IKOMIA_HUB_CI_PYTHON: "auto"
