@@ -1,38 +1,20 @@
-# Copyright (C) 2021 Ikomia SAS
-# Contact: https://www.ikomia.com
-#
-# This file is part of the IkomiaStudio software.
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+import os
+import yaml
+
+# PyQt GUI framework
+from PyQt6.QtWidgets import *
+from PyQt6 import QtCore
 
 from ikomia import core, dataprocess
 from ikomia.utils import pyqtutils, qtconversion
-from train_mmlab_detection.train_mmlab_detection_process import TrainMmlabDetectionParam
 
-# PyQt GUI framework
-from PyQt5.QtWidgets import *
-from PyQt5 import QtCore
-import os
-import yaml
+from train_mmlab_detection.train_mmlab_detection_process import TrainMmlabDetectionParam
 
 
 # --------------------
 # - Class which implements widget associated with the process
 # - Inherits PyCore.CWorkflowTaskWidget from Ikomia API
 # --------------------
-
-
 class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
 
     def __init__(self, param, parent):
@@ -71,10 +53,10 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
                                                       self.parameters.cfg["eval_period"])
         self.browse_output_folder = pyqtutils.append_browse_file(self.gridLayout, "Output folder",
                                                                  path=self.parameters.cfg["output_folder"],
-                                                                 mode=QFileDialog.Directory)
+                                                                 mode=QFileDialog.FileMode.Directory)
         self.browse_dataset_folder = pyqtutils.append_browse_file(self.gridLayout, "Output dataset folder",
                                                                   path=self.parameters.cfg["dataset_folder"],
-                                                                  mode=QFileDialog.Directory)
+                                                                  mode=QFileDialog.FileMode.Directory)
         self.check_expert_mode = pyqtutils.append_check(self.gridLayout, "Expert mode",
                                                         self.parameters.cfg["use_expert_mode"])
         self.browse_custom_config = pyqtutils.append_browse_file(self.gridLayout, "Custom config",
@@ -127,9 +109,10 @@ class TrainMmlabDetectionWidget(core.CWorkflowTaskWidget):
         word_set = set(word_list)
         completer = QCompleter(word_set)
         if i:
-            completer.setCaseSensitivity(QtCore.Qt.CaseInsensitive)
+            completer.setCaseSensitivity(QtCore.Qt.CaseSensitivity.CaseInsensitive)
         else:
-            completer.setCaseSensitivity(QtCore.Qt.CaseSensitive)
+            completer.setCaseSensitivity(QtCore.Qt.CaseSensitivity.CaseSensitive)
+
         completer.setFilterMode(QtCore.Qt.MatchFlag.MatchContains)
         widget.setCompleter(completer)
 
