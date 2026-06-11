@@ -30,7 +30,7 @@ Models:
       Dataset: COCO
       Metrics:
         box AP: 43.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lad/lad_r101_paa_r50_fpn_coco_1x/lad_r101_paa_r50_fpn_coco_1x_20220708_124357-9407ac54.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lad/lad_r101_paa_r50_fpn_coco_1x/lad_r101_paa_r50_fpn_coco_1x_20220708_124357-9407ac54.pth
   - Name: lad_r50-paa-r101_fpn_2xb8_coco_1x
     In Collection: Label Assignment Distillation
     Config: configs/lad/lad_r50-paa-r101_fpn_2xb8_coco_1x.py
@@ -42,4 +42,4 @@ Models:
       Dataset: COCO
       Metrics:
         box AP: 41.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lad/lad_r50_paa_r101_fpn_coco_1x/lad_r50_paa_r101_fpn_coco_1x_20220708_124246-74c76ff0.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lad/lad_r50_paa_r101_fpn_coco_1x/lad_r50_paa_r101_fpn_coco_1x_20220708_124246-74c76ff0.pth

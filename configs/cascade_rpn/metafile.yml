@@ -29,7 +29,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 39.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/cascade_rpn/crpn_fast_rcnn_r50_caffe_fpn_1x_coco/crpn_fast_rcnn_r50_caffe_fpn_1x_coco-cb486e66.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/cascade_rpn/crpn_fast_rcnn_r50_caffe_fpn_1x_coco/crpn_fast_rcnn_r50_caffe_fpn_1x_coco-cb486e66.pth
 
   - Name: cascade-rpn_faster-rcnn_r50-caffe_fpn_1x_coco
     In Collection: Cascade RPN
@@ -41,4 +41,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/cascade_rpn/crpn_faster_rcnn_r50_caffe_fpn_1x_coco/crpn_faster_rcnn_r50_caffe_fpn_1x_coco-c8283cca.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/cascade_rpn/crpn_faster_rcnn_r50_caffe_fpn_1x_coco/crpn_faster_rcnn_r50_caffe_fpn_1x_coco-c8283cca.pth

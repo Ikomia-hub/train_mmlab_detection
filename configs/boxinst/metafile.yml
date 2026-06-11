@@ -33,7 +33,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 30.8
-    Weights: https://download.openmmlab.com/mmdetection/v3.0/boxinst/boxinst_r50_fpn_ms-90k_coco/boxinst_r50_fpn_ms-90k_coco_20221228_163052-6add751a.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v3.0/boxinst/boxinst_r50_fpn_ms-90k_coco/boxinst_r50_fpn_ms-90k_coco_20221228_163052-6add751a.pth
 
   - Name: boxinst_r101_fpn_ms-90k_coco
     In Collection: BoxInst
@@ -49,4 +49,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 32.7
-    Weights: https://download.openmmlab.com/mmdetection/v3.0/boxinst/boxinst_r101_fpn_ms-90k_coco/boxinst_r101_fpn_ms-90k_coco_20221229_145106-facf375b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v3.0/boxinst/boxinst_r101_fpn_ms-90k_coco/boxinst_r101_fpn_ms-90k_coco_20221229_145106-facf375b.pth

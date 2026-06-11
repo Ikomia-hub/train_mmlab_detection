@@ -25,7 +25,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 34.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_r50_fpn_1x_coco/solov2_r50_fpn_1x_coco_20220512_125858-a357fa23.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_r50_fpn_1x_coco/solov2_r50_fpn_1x_coco_20220512_125858-a357fa23.pth
 
   - Name: solov2_r50_fpn_ms-3x_coco
     In Collection: SOLOv2
@@ -38,7 +38,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_r50_fpn_3x_coco/solov2_r50_fpn_3x_coco_20220512_125856-fed092d4.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_r50_fpn_3x_coco/solov2_r50_fpn_3x_coco_20220512_125856-fed092d4.pth
 
   - Name: solov2_r101-dcn_fpn_ms-3x_coco
     In Collection: SOLOv2
@@ -51,7 +51,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_r101_dcn_fpn_3x_coco/solov2_r101_dcn_fpn_3x_coco_20220513_214734-16c966cb.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_r101_dcn_fpn_3x_coco/solov2_r101_dcn_fpn_3x_coco_20220513_214734-16c966cb.pth
 
   - Name: solov2_x101-dcn_fpn_ms-3x_coco
     In Collection: SOLOv2
@@ -64,7 +64,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 42.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_x101_dcn_fpn_3x_coco/solov2_x101_dcn_fpn_3x_coco_20220513_214337-aef41095.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_x101_dcn_fpn_3x_coco/solov2_x101_dcn_fpn_3x_coco_20220513_214337-aef41095.pth
 
   - Name: solov2-light_r18_fpn_ms-3x_coco
     In Collection: SOLOv2
@@ -77,7 +77,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 29.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_light_r18_fpn_3x_coco/solov2_light_r18_fpn_3x_coco_20220511_083717-75fa355b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_light_r18_fpn_3x_coco/solov2_light_r18_fpn_3x_coco_20220511_083717-75fa355b.pth
 
   - Name: solov2-light_r50_fpn_ms-3x_coco
     In Collection: SOLOv2
@@ -90,4 +90,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 33.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solov2/solov2_light_r50_fpn_3x_coco/solov2_light_r50_fpn_3x_coco_20220512_165256-c93a6074.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solov2/solov2_light_r50_fpn_3x_coco/solov2_light_r50_fpn_3x_coco_20220512_165256-c93a6074.pth

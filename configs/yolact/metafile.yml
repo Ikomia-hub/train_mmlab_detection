@@ -37,7 +37,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 29.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolact/yolact_r50_1x8_coco/yolact_r50_1x8_coco_20200908-f38d58df.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolact/yolact_r50_1x8_coco/yolact_r50_1x8_coco_20200908-f38d58df.pth
 
   - Name: yolact_r50_8x8_coco
     In Collection: YOLACT
@@ -57,7 +57,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 28.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolact/yolact_r50_8x8_coco/yolact_r50_8x8_coco_20200908-ca34f5db.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolact/yolact_r50_8x8_coco/yolact_r50_8x8_coco_20200908-ca34f5db.pth
 
   - Name: yolact_r101_1x8_coco
     In Collection: YOLACT
@@ -78,4 +78,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 30.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolact/yolact_r101_1x8_coco/yolact_r101_1x8_coco_20200908-4cbe9101.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolact/yolact_r101_1x8_coco/yolact_r101_1x8_coco_20200908-4cbe9101.pth

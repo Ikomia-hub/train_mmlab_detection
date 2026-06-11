@@ -79,12 +79,13 @@ class TrainMmlabDetectionParam(TaskParam):
         # Place default value initialization here
         self.cfg["cfg"] = "configs/yolox/yolox_s_8xb8-300e_coco.py"
         self.cfg["model_name"] = "yolox"
-        self.cfg["model_weight_file"] = "https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/" \
-                         "yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"
+        self.cfg["model_weight_file"] = "https://mmassets.onedl.ai/mmdetection/v2.0/yolox/yolox_s_8x8_300e_coco/" \
+            "yolox_s_8x8_300e_coco_20211121_095711-4592a793.pth"
         self.cfg["epochs"] = 10
         self.cfg["batch_size"] = 2
         self.cfg["dataset_split_ratio"] = 90
-        self.cfg["output_folder"] = os.path.dirname(os.path.realpath(__file__)) + "/runs/"
+        self.cfg["output_folder"] = os.path.dirname(
+            os.path.realpath(__file__)) + "/runs/"
         self.cfg["eval_period"] = 1
         plugin_folder = os.path.dirname(os.path.realpath(__file__))
         self.cfg["dataset_folder"] = os.path.join(plugin_folder, 'dataset')
@@ -101,7 +102,8 @@ class TrainMmlabDetectionParam(TaskParam):
         self.cfg["output_folder"] = param_map["output_folder"]
         self.cfg["eval_period"] = int(param_map["eval_period"])
         self.cfg["dataset_folder"] = param_map["dataset_folder"]
-        self.cfg["use_expert_mode"] = utils.strtobool(param_map["use_expert_mode"])
+        self.cfg["use_expert_mode"] = utils.strtobool(
+            param_map["use_expert_mode"])
         self.cfg["config_file"] = param_map["config_file"]
 
 
@@ -138,11 +140,13 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
         ikdataset = self.get_input(0)
         param = self.get_param_object()
         str_datetime = datetime.now().strftime("%d-%m-%YT%Hh%Mm%Ss")
-        tb_logdir = os.path.join(ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
+        tb_logdir = os.path.join(
+            ikcfg.main_cfg["tensorboard"]["log_uri"], str_datetime)
         split = param.cfg["dataset_split_ratio"] / 100
 
         # Output directory
-        self.output_dir = os.path.join(param.cfg["output_folder"], str_datetime)
+        self.output_dir = os.path.join(
+            param.cfg["output_folder"], str_datetime)
         os.makedirs(self.output_dir, exist_ok=True)
 
         prepare_dataset(ikdataset.data, param.cfg["dataset_folder"], split)
@@ -155,10 +159,12 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             if os.path.isfile(param.cfg["config_file"]):
                 config = param.cfg["config_file"]
             else:
-                config = os.path.join(os.path.dirname(os.path.abspath(__file__)), param.cfg["cfg"])
+                config = os.path.join(os.path.dirname(
+                    os.path.abspath(__file__)), param.cfg["cfg"])
 
             cfg = Config.fromfile(config)
-            classes = list(ikdataset.data["metadata"]["category_names"].values())
+            classes = list(ikdataset.data["metadata"]
+                           ["category_names"].values())
             search_and_modify_cfg(cfg, "num_classes", len(classes))
             cfg.work_dir = self.output_dir
             eval_period = param.cfg["eval_period"]
@@ -169,7 +175,8 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
                 dataset=dict(
                     metainfo=dict(classes=classes),
                     type="CocoDataset",
-                    ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_train.json'),
+                    ann_file=os.path.join(
+                        param.cfg["dataset_folder"], 'instances_train.json'),
                     data_prefix=dict(img=''),
                     pipeline=[
                         dict(type='LoadImageFromFile', backend_args=None),
@@ -184,8 +191,9 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
                 type='MultiImageMixDataset',
                 dataset=dict(
                     type="CocoDataset",
-                    metainfo= dict(classes=classes),
-                    ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_test.json'),
+                    metainfo=dict(classes=classes),
+                    ann_file=os.path.join(
+                        param.cfg["dataset_folder"], 'instances_test.json'),
                     data_prefix=dict(img=''),
                     pipeline=[
                         dict(type='LoadImageFromFile', backend_args=None),
@@ -218,8 +226,9 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
 
             cfg.val_evaluator = dict(
                 type='CocoMetric',
-                ann_file=os.path.join(param.cfg["dataset_folder"], 'instances_test.json'),
-                metric='bbox', #'segm' for segmentation metric
+                ann_file=os.path.join(
+                    param.cfg["dataset_folder"], 'instances_test.json'),
+                metric='bbox',  # 'segm' for segmentation metric
                 backend_args=None)
             cfg.test_evaluator = cfg.val_evaluator
 
@@ -232,7 +241,8 @@ class TrainMmlabDetection(dnntrain.TrainProcess):
             cfg.default_hooks.checkpoint["save_best"] = 'coco/bbox_mAP'
             cfg.default_hooks.checkpoint["rule"] = 'greater'
 
-        cfg.visualizer.vis_backends = [dict(type='TensorboardVisBackend', save_dir=tb_logdir)]
+        cfg.visualizer.vis_backends = [
+            dict(type='TensorboardVisBackend', save_dir=tb_logdir)]
 
         try:
             visualizer = Visualizer.get_current_instance()
@@ -299,13 +309,12 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         dataprocess.CTaskFactory.__init__(self)
         # Set process information as string here
         self.info.name = "train_mmlab_detection"
-        self.info.short_description = "Train for MMLAB detection models"
+        self.info.short_description = "Train MMDetection models"
         # relative path -> as displayed in Ikomia application process tree
         self.info.path = "Plugins/Python/Detection"
         self.info.icon_path = "icons/mmlab.png"
-        self.info.version = "1.3.0"
+        self.info.version = "2.0.0"
         self.info.max_python_version = "3.10"
-        self.info.max_python_version = "3.11"
         self.info.min_ikomia_version = "0.16.0"
         # self.info.icon_path = "your path to a specific icon"
         self.info.authors = "Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and" \
@@ -319,10 +328,10 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         self.info.year = 2019
         self.info.license = "Apache 2.0"
         # URL of documentation
-        self.info.documentation_link = "https://mmdetection.readthedocs.io/en/latest/"
+        self.info.documentation_link = "https://onedl-mmdetection.readthedocs.io/en/latest/"
         # Code source repository
         self.info.repository = "https://github.com/Ikomia-hub/train_mmlab_detection"
-        self.info.original_repository = "https://github.com/open-mmlab/mmdetection"
+        self.info.original_repository = "https://github.com/Ikomia-dev/mmdetection"
         # Keywords used for search
         self.info.keywords = "train, mmlab, mmdet, detection"
         self.info.algo_type = core.AlgoType.TRAIN

@@ -29,7 +29,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 37.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_1x_coco/sparse_rcnn_r50_fpn_1x_coco_20201222_214453-dc79b137.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_1x_coco/sparse_rcnn_r50_fpn_1x_coco_20201222_214453-dc79b137.pth
 
   - Name: sparse-rcnn_r50_fpn_ms-480-800-3x_coco
     In Collection: Sparse R-CNN
@@ -41,7 +41,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_mstrain_480-800_3x_coco/sparse_rcnn_r50_fpn_mstrain_480-800_3x_coco_20201218_154234-7bc5c054.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_mstrain_480-800_3x_coco/sparse_rcnn_r50_fpn_mstrain_480-800_3x_coco_20201218_154234-7bc5c054.pth
 
   - Name: sparse-rcnn_r50_fpn_300-proposals_crop-ms-480-800-3x_coco
     In Collection: Sparse R-CNN
@@ -53,7 +53,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 45.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_300_proposals_crop_mstrain_480-800_3x_coco/sparse_rcnn_r50_fpn_300_proposals_crop_mstrain_480-800_3x_coco_20201223_024605-9fe92701.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r50_fpn_300_proposals_crop_mstrain_480-800_3x_coco/sparse_rcnn_r50_fpn_300_proposals_crop_mstrain_480-800_3x_coco_20201223_024605-9fe92701.pth
 
   - Name: sparse-rcnn_r101_fpn_ms-480-800-3x_coco
     In Collection: Sparse R-CNN
@@ -65,7 +65,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r101_fpn_mstrain_480-800_3x_coco/sparse_rcnn_r101_fpn_mstrain_480-800_3x_coco_20201223_121552-6c46c9d6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r101_fpn_mstrain_480-800_3x_coco/sparse_rcnn_r101_fpn_mstrain_480-800_3x_coco_20201223_121552-6c46c9d6.pth
 
   - Name: sparse-rcnn_r101_fpn_300-proposals_crop-ms-480-800-3x_coco
     In Collection: Sparse R-CNN
@@ -77,4 +77,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r101_fpn_300_proposals_crop_mstrain_480-800_3x_coco/sparse_rcnn_r101_fpn_300_proposals_crop_mstrain_480-800_3x_coco_20201223_023452-c23c3564.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sparse_rcnn/sparse_rcnn_r101_fpn_300_proposals_crop_mstrain_480-800_3x_coco/sparse_rcnn_r101_fpn_300_proposals_crop_mstrain_480-800_3x_coco_20201223_023452-c23c3564.pth

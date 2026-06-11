@@ -35,7 +35,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/carafe/faster_rcnn_r50_fpn_carafe_1x_coco/faster_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.386_20200504_175733-385a75b7.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/carafe/faster_rcnn_r50_fpn_carafe_1x_coco/faster_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.386_20200504_175733-385a75b7.pth
 
   - Name: mask-rcnn_r50_fpn_carafe_1x_coco
     In Collection: CARAFE
@@ -52,4 +52,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 35.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/carafe/mask_rcnn_r50_fpn_carafe_1x_coco/mask_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.393__segm_mAP-0.358_20200503_135957-8687f195.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/carafe/mask_rcnn_r50_fpn_carafe_1x_coco/mask_rcnn_r50_fpn_carafe_1x_coco_bbox_mAP-0.393__segm_mAP-0.358_20200503_135957-8687f195.pth

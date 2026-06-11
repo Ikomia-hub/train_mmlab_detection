@@ -17,7 +17,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/faster_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/faster_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20200926_125502-20289c16.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/faster_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/faster_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20200926_125502-20289c16.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -44,7 +44,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/faster_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/faster_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201006_021058-421517f1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/faster_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/faster_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201006_021058-421517f1.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20200926_125503-8a2c3d47.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20200926_125503-8a2c3d47.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -106,7 +106,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 40.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201005_215831-af60cdf9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201005_215831-af60cdf9.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -132,7 +132,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/cascade_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/cascade_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201122_213640-763cc7b5.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/cascade_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/cascade_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201122_213640-763cc7b5.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -159,7 +159,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201005_113242-b9459f8f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco/cascade_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain-range_1x_coco_20201005_113242-b9459f8f.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -189,7 +189,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/cascade_mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/cascade_mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201122_104428-99eca4c7.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/cascade_mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/cascade_mask_rcnn_s50_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201122_104428-99eca4c7.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'
@@ -220,7 +220,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnest/cascade_mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/cascade_mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201005_113243-42607475.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnest/cascade_mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco/cascade_mask_rcnn_s101_fpn_syncbn-backbone%2Bhead_mstrain_1x_coco_20201005_113243-42607475.pth
     Paper:
       URL: https://arxiv.org/abs/2004.08955
       Title: 'ResNeSt: Split-Attention Networks'

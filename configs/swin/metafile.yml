@@ -20,7 +20,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 43.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/swin/mask_rcnn_swin-s-p4-w7_fpn_fp16_ms-crop-3x_coco/mask_rcnn_swin-s-p4-w7_fpn_fp16_ms-crop-3x_coco_20210903_104808-b92c91f1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/swin/mask_rcnn_swin-s-p4-w7_fpn_fp16_ms-crop-3x_coco/mask_rcnn_swin-s-p4-w7_fpn_fp16_ms-crop-3x_coco_20210903_104808-b92c91f1.pth
     Paper:
       URL: https://arxiv.org/abs/2107.08430
       Title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'
@@ -50,7 +50,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_20210906_131725-bacf6f7b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_20210906_131725-bacf6f7b.pth
     Paper:
       URL: https://arxiv.org/abs/2107.08430
       Title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'
@@ -80,7 +80,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_1x_coco/mask_rcnn_swin-t-p4-w7_fpn_1x_coco_20210902_120937-9d6b7cfa.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_1x_coco/mask_rcnn_swin-t-p4-w7_fpn_1x_coco_20210902_120937-9d6b7cfa.pth
     Paper:
       URL: https://arxiv.org/abs/2107.08430
       Title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'
@@ -110,7 +110,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-3x_coco/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-3x_coco_20210908_165006-90a4008c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/swin/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-3x_coco/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-3x_coco_20210908_165006-90a4008c.pth
     Paper:
       URL: https://arxiv.org/abs/2107.08430
       Title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'

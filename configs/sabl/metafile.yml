@@ -29,7 +29,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 39.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_faster_rcnn_r50_fpn_1x_coco/sabl_faster_rcnn_r50_fpn_1x_coco-e867595b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_faster_rcnn_r50_fpn_1x_coco/sabl_faster_rcnn_r50_fpn_1x_coco-e867595b.pth
 
   - Name: sabl-faster-rcnn_r101_fpn_1x_coco
     In Collection: SABL
@@ -41,7 +41,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_faster_rcnn_r101_fpn_1x_coco/sabl_faster_rcnn_r101_fpn_1x_coco-f804c6c1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_faster_rcnn_r101_fpn_1x_coco/sabl_faster_rcnn_r101_fpn_1x_coco-f804c6c1.pth
 
   - Name: sabl-cascade-rcnn_r50_fpn_1x_coco
     In Collection: SABL
@@ -53,7 +53,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_cascade_rcnn_r50_fpn_1x_coco/sabl_cascade_rcnn_r50_fpn_1x_coco-e1748e5e.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_cascade_rcnn_r50_fpn_1x_coco/sabl_cascade_rcnn_r50_fpn_1x_coco-e1748e5e.pth
 
   - Name: sabl-cascade-rcnn_r101_fpn_1x_coco
     In Collection: SABL
@@ -65,7 +65,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 43.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_cascade_rcnn_r101_fpn_1x_coco/sabl_cascade_rcnn_r101_fpn_1x_coco-2b83e87c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_cascade_rcnn_r101_fpn_1x_coco/sabl_cascade_rcnn_r101_fpn_1x_coco-2b83e87c.pth
 
   - Name: sabl-retinanet_r50_fpn_1x_coco
     In Collection: SABL
@@ -77,7 +77,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 37.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r50_fpn_1x_coco/sabl_retinanet_r50_fpn_1x_coco-6c54fd4f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r50_fpn_1x_coco/sabl_retinanet_r50_fpn_1x_coco-6c54fd4f.pth
 
   - Name: sabl-retinanet_r50-gn_fpn_1x_coco
     In Collection: SABL
@@ -89,7 +89,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 38.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r50_fpn_gn_1x_coco/sabl_retinanet_r50_fpn_gn_1x_coco-e16dfcf1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r50_fpn_gn_1x_coco/sabl_retinanet_r50_fpn_gn_1x_coco-e16dfcf1.pth
 
   - Name: sabl-retinanet_r101_fpn_1x_coco
     In Collection: SABL
@@ -101,7 +101,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 39.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_1x_coco/sabl_retinanet_r101_fpn_1x_coco-42026904.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_1x_coco/sabl_retinanet_r101_fpn_1x_coco-42026904.pth
 
   - Name: sabl-retinanet_r101-gn_fpn_1x_coco
     In Collection: SABL
@@ -113,7 +113,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_1x_coco/sabl_retinanet_r101_fpn_gn_1x_coco-40a893e8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_1x_coco/sabl_retinanet_r101_fpn_gn_1x_coco-40a893e8.pth
 
   - Name: sabl-retinanet_r101-gn_fpn_ms-640-800-2x_coco
     In Collection: SABL
@@ -125,7 +125,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_2x_ms_640_800_coco/sabl_retinanet_r101_fpn_gn_2x_ms_640_800_coco-1e63382c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_2x_ms_640_800_coco/sabl_retinanet_r101_fpn_gn_2x_ms_640_800_coco-1e63382c.pth
 
   - Name: sabl-retinanet_r101-gn_fpn_ms-480-960-2x_coco
     In Collection: SABL
@@ -137,4 +137,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 43.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_2x_ms_480_960_coco/sabl_retinanet_r101_fpn_gn_2x_ms_480_960_coco-5342f857.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/sabl/sabl_retinanet_r101_fpn_gn_2x_ms_480_960_coco/sabl_retinanet_r101_fpn_gn_2x_ms_480_960_coco-5342f857.pth

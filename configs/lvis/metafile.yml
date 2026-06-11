@@ -13,7 +13,7 @@ Models:
         Dataset: LVIS v0.5
         Metrics:
           mask AP: 25.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_2x_lvis-dbd06831.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_2x_lvis-dbd06831.pth
 
   - Name: mask-rcnn_r101_fpn_sample1e-3_ms-2x_lvis-v0.5
     In Collection: Mask R-CNN
@@ -29,7 +29,7 @@ Models:
         Dataset: LVIS v0.5
         Metrics:
           mask AP: 27.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_2x_lvis-54582ee2.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_2x_lvis-54582ee2.pth
 
   - Name: mask-rcnn_x101-32x4d_fpn_sample1e-3_ms-2x_lvis-v0.5
     In Collection: Mask R-CNN
@@ -45,7 +45,7 @@ Models:
         Dataset: LVIS v0.5
         Metrics:
           mask AP: 26.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_2x_lvis-3cf55ea2.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_2x_lvis-3cf55ea2.pth
 
   - Name: mask-rcnn_x101-64x4d_fpn_sample1e-3_ms-2x_lvis-v0.5
     In Collection: Mask R-CNN
@@ -61,7 +61,7 @@ Models:
         Dataset: LVIS v0.5
         Metrics:
           mask AP: 26.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_2x_lvis-1c99a5ad.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_2x_lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_2x_lvis-1c99a5ad.pth
 
   - Name: mask-rcnn_r50_fpn_sample1e-3_ms-1x_lvis-v1
     In Collection: Mask R-CNN
@@ -77,7 +77,7 @@ Models:
         Dataset: LVIS v1
         Metrics:
           mask AP: 21.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_r50_fpn_sample1e-3_mstrain_1x_lvis_v1-aa78ac3d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_r50_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_r50_fpn_sample1e-3_mstrain_1x_lvis_v1-aa78ac3d.pth
 
   - Name: mask-rcnn_r101_fpn_sample1e-3_ms-1x_lvis-v1
     In Collection: Mask R-CNN
@@ -93,7 +93,7 @@ Models:
         Dataset: LVIS v1
         Metrics:
           mask AP: 23.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_r101_fpn_sample1e-3_mstrain_1x_lvis_v1-ec55ce32.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_r101_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_r101_fpn_sample1e-3_mstrain_1x_lvis_v1-ec55ce32.pth
 
   - Name: mask-rcnn_x101-32x4d_fpn_sample1e-3_ms-1x_lvis-v1
     In Collection: Mask R-CNN
@@ -109,7 +109,7 @@ Models:
         Dataset: LVIS v1
         Metrics:
           mask AP: 25.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_1x_lvis_v1-ebbc5c81.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_x101_32x4d_fpn_sample1e-3_mstrain_1x_lvis_v1-ebbc5c81.pth
 
   - Name: mask-rcnn_x101-64x4d_fpn_sample1e-3_ms-1x_lvis-v1
     In Collection: Mask R-CNN
@@ -125,4 +125,4 @@ Models:
         Dataset: LVIS v1
         Metrics:
           mask AP: 25.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_1x_lvis_v1-43d9edfe.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/lvis/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_1x_lvis_v1/mask_rcnn_x101_64x4d_fpn_sample1e-3_mstrain_1x_lvis_v1-43d9edfe.pth

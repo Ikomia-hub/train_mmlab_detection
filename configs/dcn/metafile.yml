@@ -35,7 +35,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_dconv_c3-c5_1x_coco/faster_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200130-d68aed1e.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_dconv_c3-c5_1x_coco/faster_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200130-d68aed1e.pth
 
   - Name: faster-rcnn_r50_fpn_dpool_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -55,7 +55,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 38.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_dpool_1x_coco/faster_rcnn_r50_fpn_dpool_1x_coco_20200307-90d3c01d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_dpool_1x_coco/faster_rcnn_r50_fpn_dpool_1x_coco_20200307-90d3c01d.pth
 
   - Name: faster-rcnn_r101-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r101_fpn_dconv_c3-c5_1x_coco/faster_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-1377f13d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r101_fpn_dconv_c3-c5_1x_coco/faster_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-1377f13d.pth
 
   - Name: faster-rcnn_x101-32x4d-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -95,7 +95,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco/faster_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco_20200203-4f85c69c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco/faster_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco_20200203-4f85c69c.pth
 
   - Name: mask-rcnn_r50_fpn_dconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -119,7 +119,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200203-4d9ad43b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200203-4d9ad43b.pth
 
   - Name: mask-rcnn_r50_fpn_fp16_dconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -140,7 +140,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_dconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_fp16_dconv_c3-c5_1x_coco_20210520_180247-c06429d2.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_dconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_fp16_dconv_c3-c5_1x_coco_20210520_180247-c06429d2.pth
 
   - Name: mask-rcnn_r101-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -164,7 +164,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco/mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200216-a71f5bce.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco/mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200216-a71f5bce.pth
 
   - Name: cascade-rcnn_r50_fpn_dconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -184,7 +184,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 43.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_rcnn_r50_fpn_dconv_c3-c5_1x_coco/cascade_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200130-2f1fca44.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/cascade_rcnn_r50_fpn_dconv_c3-c5_1x_coco/cascade_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200130-2f1fca44.pth
 
   - Name: cascade-rcnn_r101-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -204,7 +204,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 45.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco/cascade_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200203-3b2f0594.pth
 
   - Name: cascade-mask-rcnn_r50_fpn_dconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -228,7 +228,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200202-42e767a2.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/cascade_mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_r50_fpn_dconv_c3-c5_1x_coco_20200202-42e767a2.pth
 
   - Name: cascade-mask-rcnn_r101-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -252,7 +252,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200204-df0c5f10.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/cascade_mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_r101_fpn_dconv_c3-c5_1x_coco_20200204-df0c5f10.pth
 
   - Name: cascade-mask-rcnn_x101-32x4d-dconv-c3-c5_fpn_1x_coco
     In Collection: Deformable Convolutional Networks
@@ -269,4 +269,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/cascade_mask_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco-e75f90c8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/cascade_mask_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco/cascade_mask_rcnn_x101_32x4d_fpn_dconv_c3-c5_1x_coco-e75f90c8.pth

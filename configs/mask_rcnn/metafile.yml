@@ -38,7 +38,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 34.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_1x_coco/mask_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.38__segm_mAP-0.344_20200504_231812-0ebd1859.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_1x_coco/mask_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.38__segm_mAP-0.344_20200504_231812-0ebd1859.pth
 
   - Name: mask-rcnn_r50_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -62,7 +62,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 34.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_1x_coco/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth
 
   - Name: mask-rcnn_r50_fpn_fp16_1x_coco
     In Collection: Mask R-CNN
@@ -90,7 +90,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 34.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_1x_coco/mask_rcnn_r50_fpn_fp16_1x_coco_20200205-59faf7e4.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_1x_coco/mask_rcnn_r50_fpn_fp16_1x_coco_20200205-59faf7e4.pth
 
   - Name: mask-rcnn_r50_fpn_2x_coco
     In Collection: Mask R-CNN
@@ -114,7 +114,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 35.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_2x_coco/mask_rcnn_r50_fpn_2x_coco_bbox_mAP-0.392__segm_mAP-0.354_20200505_003907-3e542a40.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_2x_coco/mask_rcnn_r50_fpn_2x_coco_bbox_mAP-0.392__segm_mAP-0.354_20200505_003907-3e542a40.pth
 
   - Name: mask-rcnn_r101-caffe_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -130,7 +130,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 36.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_caffe_fpn_1x_coco/mask_rcnn_r101_caffe_fpn_1x_coco_20200601_095758-805e06c1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_caffe_fpn_1x_coco/mask_rcnn_r101_caffe_fpn_1x_coco_20200601_095758-805e06c1.pth
 
   - Name: mask-rcnn_r101_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -154,7 +154,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 36.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_1x_coco/mask_rcnn_r101_fpn_1x_coco_20200204-1efe0ed5.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_1x_coco/mask_rcnn_r101_fpn_1x_coco_20200204-1efe0ed5.pth
 
   - Name: mask-rcnn_r101_fpn_2x_coco
     In Collection: Mask R-CNN
@@ -178,7 +178,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 36.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_2x_coco/mask_rcnn_r101_fpn_2x_coco_bbox_mAP-0.408__segm_mAP-0.366_20200505_071027-14b391c7.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_2x_coco/mask_rcnn_r101_fpn_2x_coco_bbox_mAP-0.408__segm_mAP-0.366_20200505_071027-14b391c7.pth
 
   - Name: mask-rcnn_x101-32x4d_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -202,7 +202,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_1x_coco/mask_rcnn_x101_32x4d_fpn_1x_coco_20200205-478d0b67.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_1x_coco/mask_rcnn_x101_32x4d_fpn_1x_coco_20200205-478d0b67.pth
 
   - Name: mask-rcnn_x101-32x4d_fpn_2x_coco
     In Collection: Mask R-CNN
@@ -226,7 +226,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_2x_coco/mask_rcnn_x101_32x4d_fpn_2x_coco_bbox_mAP-0.422__segm_mAP-0.378_20200506_004702-faef898c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_2x_coco/mask_rcnn_x101_32x4d_fpn_2x_coco_bbox_mAP-0.422__segm_mAP-0.378_20200506_004702-faef898c.pth
 
   - Name: mask-rcnn_x101-64x4d_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -250,7 +250,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_1x_coco/mask_rcnn_x101_64x4d_fpn_1x_coco_20200201-9352eb0d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_1x_coco/mask_rcnn_x101_64x4d_fpn_1x_coco_20200201-9352eb0d.pth
 
   - Name: mask-rcnn_x101-64x4d_fpn_2x_coco
     In Collection: Mask R-CNN
@@ -274,7 +274,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_2x_coco/mask_rcnn_x101_64x4d_fpn_2x_coco_20200509_224208-39d6f70c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_2x_coco/mask_rcnn_x101_64x4d_fpn_2x_coco_20200509_224208-39d6f70c.pth
 
   - Name: mask-rcnn_x101-32x8d_fpn_1x_coco
     In Collection: Mask R-CNN
@@ -291,7 +291,7 @@ Models:
       Dataset: COCO
       Metrics:
         mask AP: 38.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_1x_coco/mask_rcnn_x101_32x8d_fpn_1x_coco_20220630_173841-0aaf329e.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_1x_coco/mask_rcnn_x101_32x8d_fpn_1x_coco_20220630_173841-0aaf329e.pth
 
   - Name: mask-rcnn_r50-caffe_fpn_ms-poly-2x_coco
     In Collection: Mask R-CNN
@@ -308,7 +308,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 36.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_2x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_2x_coco_bbox_mAP-0.403__segm_mAP-0.365_20200504_231822-a75c98ce.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_2x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_2x_coco_bbox_mAP-0.403__segm_mAP-0.365_20200504_231822-a75c98ce.pth
 
   - Name: mask-rcnn_r50-caffe_fpn_ms-poly-3x_coco
     In Collection: Mask R-CNN
@@ -325,7 +325,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth
 
   - Name: mask-rcnn_r50_fpn_mstrain-poly_3x_coco
     In Collection: Mask R-CNN
@@ -342,7 +342,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_fpn_mstrain-poly_3x_coco_20210524_201154-21b550bb.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_fpn_mstrain-poly_3x_coco_20210524_201154-21b550bb.pth
 
   - Name: mask-rcnn_r101_fpn_ms-poly-3x_coco
     In Collection: Mask R-CNN
@@ -359,7 +359,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_mstrain-poly_3x_coco/mask_rcnn_r101_fpn_mstrain-poly_3x_coco_20210524_200244-5675c317.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_fpn_mstrain-poly_3x_coco/mask_rcnn_r101_fpn_mstrain-poly_3x_coco_20210524_200244-5675c317.pth
 
   - Name: mask-rcnn_r101-caffe_fpn_ms-poly-3x_coco
     In Collection: Mask R-CNN
@@ -376,7 +376,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r101_caffe_fpn_mstrain-poly_3x_coco_20210526_132339-3c33ce02.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_r101_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r101_caffe_fpn_mstrain-poly_3x_coco_20210526_132339-3c33ce02.pth
 
   - Name: mask-rcnn_x101-32x4d_fpn_ms-poly-3x_coco
     In Collection: Mask R-CNN
@@ -393,7 +393,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_32x4d_fpn_mstrain-poly_3x_coco_20210524_201410-abcd7859.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_32x4d_fpn_mstrain-poly_3x_coco_20210524_201410-abcd7859.pth
 
   - Name: mask-rcnn_x101-32x8d_fpn_ms-poly-1x_coco
     In Collection: Mask R-CNN
@@ -410,7 +410,7 @@ Models:
       Dataset: COCO
       Metrics:
         mask AP: 39.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_mstrain-poly_1x_coco/mask_rcnn_x101_32x8d_fpn_mstrain-poly_1x_coco_20220630_170346-b4637974.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_mstrain-poly_1x_coco/mask_rcnn_x101_32x8d_fpn_mstrain-poly_1x_coco_20220630_170346-b4637974.pth
 
   - Name: mask-rcnn_x101-32x8d_fpn_ms-poly-3x_coco
     In Collection: Mask R-CNN
@@ -423,7 +423,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_32x8d_fpn_mstrain-poly_3x_coco_20210607_161042-8bd2c639.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_32x8d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_32x8d_fpn_mstrain-poly_3x_coco_20210607_161042-8bd2c639.pth
 
   - Name: mask-rcnn_x101-64x4d_fpn_ms-poly_3x_coco
     In Collection: Mask R-CNN
@@ -440,4 +440,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/mask_rcnn/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco/mask_rcnn_x101_64x4d_fpn_mstrain-poly_3x_coco_20210526_120447-c376f129.pth

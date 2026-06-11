@@ -8,7 +8,7 @@ _base_ = [
 # please install mmcls>=1.0
 # import mmcls.models to trigger register_module in mmcls
 custom_imports = dict(imports=['mmcls.models'], allow_failed_imports=False)
-checkpoint_file = 'https://download.openmmlab.com/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
+checkpoint_file = 'https://mmassets.onedl.ai/mmclassification/v0/convnext/downstream/convnext-tiny_3rdparty_32xb128-noema_in1k_20220301-795e9634.pth'  # noqa
 
 model = dict(
     backbone=dict(

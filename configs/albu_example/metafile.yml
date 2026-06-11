@@ -14,4 +14,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 34.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/albu_example/mask_rcnn_r50_fpn_albu_1x_coco/mask_rcnn_r50_fpn_albu_1x_coco_20200208-ab203bcd.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/albu_example/mask_rcnn_r50_fpn_albu_1x_coco/mask_rcnn_r50_fpn_albu_1x_coco_20200208-ab203bcd.pth

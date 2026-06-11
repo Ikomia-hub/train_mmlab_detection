@@ -17,7 +17,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 36.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvt-t_fpn_1x_coco/retinanet_pvt-t_fpn_1x_coco_20210831_103110-17b566bd.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvt-t_fpn_1x_coco/retinanet_pvt-t_fpn_1x_coco_20210831_103110-17b566bd.pth
     Paper:
       URL: https://arxiv.org/abs/2102.12122
       Title: "Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions"
@@ -44,7 +44,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvt-s_fpn_1x_coco/retinanet_pvt-s_fpn_1x_coco_20210906_142921-b6c94a5b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvt-s_fpn_1x_coco/retinanet_pvt-s_fpn_1x_coco_20210906_142921-b6c94a5b.pth
     Paper:
       URL: https://arxiv.org/abs/2102.12122
       Title: "Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions"
@@ -71,7 +71,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvt-m_fpn_1x_coco/retinanet_pvt-m_fpn_1x_coco_20210831_103243-55effa1b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvt-m_fpn_1x_coco/retinanet_pvt-m_fpn_1x_coco_20210831_103243-55effa1b.pth
     Paper:
       URL: https://arxiv.org/abs/2102.12122
       Title: "Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions"
@@ -98,7 +98,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 37.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b0_fpn_1x_coco/retinanet_pvtv2-b0_fpn_1x_coco_20210831_103157-13e9aabe.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b0_fpn_1x_coco/retinanet_pvtv2-b0_fpn_1x_coco_20210831_103157-13e9aabe.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"
@@ -125,7 +125,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b1_fpn_1x_coco/retinanet_pvtv2-b1_fpn_1x_coco_20210831_103318-7e169a7d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b1_fpn_1x_coco/retinanet_pvtv2-b1_fpn_1x_coco_20210831_103318-7e169a7d.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"
@@ -152,7 +152,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b2_fpn_1x_coco/retinanet_pvtv2-b2_fpn_1x_coco_20210901_174843-529f0b9a.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b2_fpn_1x_coco/retinanet_pvtv2-b2_fpn_1x_coco_20210901_174843-529f0b9a.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"
@@ -179,7 +179,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b3_fpn_1x_coco/retinanet_pvtv2-b3_fpn_1x_coco_20210903_151512-8357deff.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b3_fpn_1x_coco/retinanet_pvtv2-b3_fpn_1x_coco_20210903_151512-8357deff.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"
@@ -206,7 +206,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b4_fpn_1x_coco/retinanet_pvtv2-b4_fpn_1x_coco_20210901_170151-83795c86.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b4_fpn_1x_coco/retinanet_pvtv2-b4_fpn_1x_coco_20210901_170151-83795c86.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"
@@ -233,7 +233,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/pvt/retinanet_pvtv2-b5_fpn_1x_coco/retinanet_pvtv2-b5_fpn_1x_coco_20210902_201800-3420eb57.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/pvt/retinanet_pvtv2-b5_fpn_1x_coco/retinanet_pvtv2-b5_fpn_1x_coco_20210902_201800-3420eb57.pth
     Paper:
       URL: https://arxiv.org/abs/2106.13797
       Title: "PVTv2: Improved Baselines with Pyramid Vision Transformer"

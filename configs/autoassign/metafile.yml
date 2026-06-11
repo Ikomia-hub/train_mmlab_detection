@@ -30,4 +30,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/autoassign/auto_assign_r50_fpn_1x_coco/auto_assign_r50_fpn_1x_coco_20210413_115540-5e17991f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/autoassign/auto_assign_r50_fpn_1x_coco/auto_assign_r50_fpn_1x_coco_20210413_115540-5e17991f.pth
