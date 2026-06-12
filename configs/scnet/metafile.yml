@@ -41,7 +41,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scnet/scnet_r50_fpn_1x_coco/scnet_r50_fpn_1x_coco-c3f09857.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scnet/scnet_r50_fpn_1x_coco/scnet_r50_fpn_1x_coco-c3f09857.pth
 
   - Name: scnet_r50_fpn_20e_coco
     In Collection: SCNet
@@ -65,7 +65,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 40.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scnet/scnet_r50_fpn_20e_coco/scnet_r50_fpn_20e_coco-a569f645.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scnet/scnet_r50_fpn_20e_coco/scnet_r50_fpn_20e_coco-a569f645.pth
 
   - Name: scnet_r101_fpn_20e_coco
     In Collection: SCNet
@@ -89,7 +89,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 40.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scnet/scnet_r101_fpn_20e_coco/scnet_r101_fpn_20e_coco-294e312c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scnet/scnet_r101_fpn_20e_coco/scnet_r101_fpn_20e_coco-294e312c.pth
 
   - Name: scnet_x101-64x4d_fpn_20e_coco
     In Collection: SCNet
@@ -113,4 +113,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 42.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scnet/scnet_x101_64x4d_fpn_20e_coco/scnet_x101_64x4d_fpn_20e_coco-fb09dec9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scnet/scnet_x101_64x4d_fpn_20e_coco/scnet_x101_64x4d_fpn_20e_coco-fb09dec9.pth

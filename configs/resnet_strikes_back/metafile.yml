@@ -17,7 +17,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnet_strikes_back/faster_rcnn_r50_fpn_rsb-pretrain_1x_coco/faster_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_162229-32ae82a9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnet_strikes_back/faster_rcnn_r50_fpn_rsb-pretrain_1x_coco/faster_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_162229-32ae82a9.pth
     Paper:
       URL: https://arxiv.org/abs/2110.00476
       Title: 'ResNet strikes back: An improved training procedure in timm'
@@ -48,7 +48,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 39.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnet_strikes_back/cascade_mask_rcnn_r50_fpn_rsb-pretrain_1x_coco/cascade_mask_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_193636-8b9ad50f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnet_strikes_back/cascade_mask_rcnn_r50_fpn_rsb-pretrain_1x_coco/cascade_mask_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_193636-8b9ad50f.pth
     Paper:
       URL: https://arxiv.org/abs/2110.00476
       Title: 'ResNet strikes back: An improved training procedure in timm'
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 39.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnet_strikes_back/retinanet_r50_fpn_rsb-pretrain_1x_coco/retinanet_r50_fpn_rsb-pretrain_1x_coco_20220113_175432-bd24aae9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnet_strikes_back/retinanet_r50_fpn_rsb-pretrain_1x_coco/retinanet_r50_fpn_rsb-pretrain_1x_coco_20220113_175432-bd24aae9.pth
     Paper:
       URL: https://arxiv.org/abs/2110.00476
       Title: 'ResNet strikes back: An improved training procedure in timm'
@@ -106,7 +106,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/resnet_strikes_back/mask_rcnn_r50_fpn_rsb-pretrain_1x_coco/mask_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_174054-06ce8ba0.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/resnet_strikes_back/mask_rcnn_r50_fpn_rsb-pretrain_1x_coco/mask_rcnn_r50_fpn_rsb-pretrain_1x_coco_20220113_174054-06ce8ba0.pth
     Paper:
       URL: https://arxiv.org/abs/2110.00476
       Title: 'ResNet strikes back: An improved training procedure in timm'

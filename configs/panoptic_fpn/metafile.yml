@@ -28,7 +28,7 @@ Models:
       Dataset: COCO
       Metrics:
         PQ: 40.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r50_fpn_1x_coco/panoptic_fpn_r50_fpn_1x_coco_20210821_101153-9668fd13.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r50_fpn_1x_coco/panoptic_fpn_r50_fpn_1x_coco_20210821_101153-9668fd13.pth
 
   - Name: panoptic_fpn_r50_fpn_mstrain_3x_coco
     In Collection: PanopticFPN
@@ -41,7 +41,7 @@ Models:
       Dataset: COCO
       Metrics:
         PQ: 42.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r50_fpn_mstrain_3x_coco/panoptic_fpn_r50_fpn_mstrain_3x_coco_20210824_171155-5650f98b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r50_fpn_mstrain_3x_coco/panoptic_fpn_r50_fpn_mstrain_3x_coco_20210824_171155-5650f98b.pth
 
   - Name: panoptic_fpn_r101_fpn_1x_coco
     In Collection: PanopticFPN
@@ -54,7 +54,7 @@ Models:
       Dataset: COCO
       Metrics:
         PQ: 42.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r101_fpn_1x_coco/panoptic_fpn_r101_fpn_1x_coco_20210820_193950-ab9157a2.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r101_fpn_1x_coco/panoptic_fpn_r101_fpn_1x_coco_20210820_193950-ab9157a2.pth
 
   - Name: panoptic_fpn_r101_fpn_mstrain_3x_coco
     In Collection: PanopticFPN
@@ -67,4 +67,4 @@ Models:
       Dataset: COCO
       Metrics:
         PQ: 44.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r101_fpn_mstrain_3x_coco/panoptic_fpn_r101_fpn_mstrain_3x_coco_20210823_114712-9c99acc4.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/panoptic_fpn/panoptic_fpn_r101_fpn_mstrain_3x_coco/panoptic_fpn_r101_fpn_mstrain_3x_coco_20210823_114712-9c99acc4.pth

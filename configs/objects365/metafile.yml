@@ -13,7 +13,7 @@
     Dataset: Objects365 v1
     Metrics:
       box AP: 14.8
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/retinanet_r50_fpn_1x_obj365v1/retinanet_r50_fpn_1x_obj365v1_20221219_181859-ba3e3dd5.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/retinanet_r50_fpn_1x_obj365v1/retinanet_r50_fpn_1x_obj365v1_20221219_181859-ba3e3dd5.pth
 
 - Name: retinanet_r50-syncbn_fpn_1350k_objects365v1
   In Collection: RetinaNet
@@ -30,7 +30,7 @@
     Dataset: Objects365 v1
     Metrics:
       box AP: 18.0
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/retinanet_r50_fpn_syncbn_1350k_obj365v1/retinanet_r50_fpn_syncbn_1350k_obj365v1_20220513_111237-7517c576.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/retinanet_r50_fpn_syncbn_1350k_obj365v1/retinanet_r50_fpn_syncbn_1350k_obj365v1_20220513_111237-7517c576.pth
 
 - Name: retinanet_r50_fpn_1x_objects365v2
   In Collection: RetinaNet
@@ -47,7 +47,7 @@
     Dataset: Objects365 v2
     Metrics:
       box AP: 16.7
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/retinanet_r50_fpn_1x_obj365v2/retinanet_r50_fpn_1x_obj365v2_20221223_122105-d9b191f1.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/retinanet_r50_fpn_1x_obj365v2/retinanet_r50_fpn_1x_obj365v2_20221223_122105-d9b191f1.pth
 
 - Name: faster-rcnn_r50_fpn_16xb4-1x_objects365v1
   In Collection: Faster R-CNN
@@ -64,7 +64,7 @@
     Dataset: Objects365 v1
     Metrics:
       box AP: 19.6
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_16x4_1x_obj365v1/faster_rcnn_r50_fpn_16x4_1x_obj365v1_20221219_181226-9ff10f95.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_16x4_1x_obj365v1/faster_rcnn_r50_fpn_16x4_1x_obj365v1_20221219_181226-9ff10f95.pth
 
 - Name: faster-rcnn_r50-syncbn_fpn_1350k_objects365v1
   In Collection: Faster R-CNN
@@ -81,7 +81,7 @@
     Dataset: Objects365 v1
     Metrics:
       box AP: 22.3
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_syncbn_1350k_obj365v1/faster_rcnn_r50_fpn_syncbn_1350k_obj365v1_20220510_142457-337d8965.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_syncbn_1350k_obj365v1/faster_rcnn_r50_fpn_syncbn_1350k_obj365v1_20220510_142457-337d8965.pth
 
 - Name: faster-rcnn_r50_fpn_16xb4-1x_objects365v2
   In Collection: Faster R-CNN
@@ -98,4 +98,4 @@
     Dataset: Objects365 v2
     Metrics:
       box AP: 19.8
-  Weights: https://download.openmmlab.com/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_16x4_1x_obj365v2/faster_rcnn_r50_fpn_16x4_1x_obj365v2_20221220_175040-5910b015.pth
+  Weights: https://mmassets.onedl.ai/mmdetection/v2.0/objects365/faster_rcnn_r50_fpn_16x4_1x_obj365v2/faster_rcnn_r50_fpn_16x4_1x_obj365v2_20221220_175040-5910b015.pth

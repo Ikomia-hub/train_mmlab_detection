@@ -35,7 +35,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 27.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_320_273e_coco/yolov3_d53_320_273e_coco-421362b6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_d53_320_273e_coco/yolov3_d53_320_273e_coco-421362b6.pth
 
   - Name: yolov3_d53_mstrain-416_273e_coco
     In Collection: YOLOv3
@@ -55,7 +55,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 30.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_mstrain-416_273e_coco/yolov3_d53_mstrain-416_273e_coco-2b60fcd9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_d53_mstrain-416_273e_coco/yolov3_d53_mstrain-416_273e_coco-2b60fcd9.pth
 
   - Name: yolov3_d53_mstrain-608_273e_coco
     In Collection: YOLOv3
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 33.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_mstrain-608_273e_coco/yolov3_d53_mstrain-608_273e_coco_20210518_115020-a2c3acb8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_d53_mstrain-608_273e_coco/yolov3_d53_mstrain-608_273e_coco_20210518_115020-a2c3acb8.pth
 
   - Name: yolov3_d53_fp16_mstrain-608_273e_coco
     In Collection: YOLOv3
@@ -95,7 +95,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 33.8
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_fp16_mstrain-608_273e_coco/yolov3_d53_fp16_mstrain-608_273e_coco_20210517_213542-4bc34944.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_d53_fp16_mstrain-608_273e_coco/yolov3_d53_fp16_mstrain-608_273e_coco_20210517_213542-4bc34944.pth
 
   - Name: yolov3_mobilenetv2_8xb24-320-300e_coco
     In Collection: YOLOv3
@@ -108,7 +108,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 22.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_mobilenetv2_320_300e_coco/yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_mobilenetv2_320_300e_coco/yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth
 
   - Name: yolov3_mobilenetv2_8xb24-ms-416-300e_coco
     In Collection: YOLOv3
@@ -121,4 +121,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 23.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_mobilenetv2_mstrain-416_300e_coco/yolov3_mobilenetv2_mstrain-416_300e_coco_20210718_010823-f68a07b3.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/yolo/yolov3_mobilenetv2_mstrain-416_300e_coco/yolov3_mobilenetv2_mstrain-416_300e_coco_20210718_010823-f68a07b3.pth

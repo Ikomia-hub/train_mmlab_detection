@@ -36,7 +36,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 37.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/nas_fpn/retinanet_r50_fpn_crop640_50e_coco/retinanet_r50_fpn_crop640_50e_coco-9b953d76.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/nas_fpn/retinanet_r50_fpn_crop640_50e_coco/retinanet_r50_fpn_crop640_50e_coco-9b953d76.pth
 
   - Name: retinanet_r50_nasfpn_crop640-50e_coco
     In Collection: NAS-FPN
@@ -56,4 +56,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/nas_fpn/retinanet_r50_nasfpn_crop640_50e_coco/retinanet_r50_nasfpn_crop640_50e_coco-0ad1f644.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/nas_fpn/retinanet_r50_nasfpn_crop640_50e_coco/retinanet_r50_nasfpn_crop640_50e_coco-0ad1f644.pth

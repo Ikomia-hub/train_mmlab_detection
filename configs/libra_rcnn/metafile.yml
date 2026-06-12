@@ -36,7 +36,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 38.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_r50_fpn_1x_coco/libra_faster_rcnn_r50_fpn_1x_coco_20200130-3afee3a9.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_r50_fpn_1x_coco/libra_faster_rcnn_r50_fpn_1x_coco_20200130-3afee3a9.pth
 
   - Name: libra-faster-rcnn_r101_fpn_1x_coco
     In Collection: Libra R-CNN
@@ -56,7 +56,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_r101_fpn_1x_coco/libra_faster_rcnn_r101_fpn_1x_coco_20200203-8dba6a5a.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_r101_fpn_1x_coco/libra_faster_rcnn_r101_fpn_1x_coco_20200203-8dba6a5a.pth
 
   - Name: libra-faster-rcnn_x101-64x4d_fpn_1x_coco
     In Collection: Libra R-CNN
@@ -76,7 +76,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_x101_64x4d_fpn_1x_coco/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/libra_rcnn/libra_faster_rcnn_x101_64x4d_fpn_1x_coco/libra_faster_rcnn_x101_64x4d_fpn_1x_coco_20200315-3a7d0488.pth
 
   - Name: libra-retinanet_r50_fpn_1x_coco
     In Collection: Libra R-CNN
@@ -96,4 +96,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 37.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/libra_rcnn/libra_retinanet_r50_fpn_1x_coco/libra_retinanet_r50_fpn_1x_coco_20200205-804d94ce.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/libra_rcnn/libra_retinanet_r50_fpn_1x_coco/libra_retinanet_r50_fpn_1x_coco_20200205-804d94ce.pth

@@ -35,7 +35,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdconv_c3-c5_1x_coco/faster_rcnn_r50_fpn_mdconv_c3-c5_1x_coco_20200130-d099253b.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdconv_c3-c5_1x_coco/faster_rcnn_r50_fpn_mdconv_c3-c5_1x_coco_20200130-d099253b.pth
 
   - Name: faster-rcnn_r50_fpn_mdconv_c3-c5_group4_1x_coco
     In Collection: Deformable Convolutional Networks v2
@@ -55,7 +55,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 41.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdconv_c3-c5_group4_1x_coco/faster_rcnn_r50_fpn_mdconv_c3-c5_group4_1x_coco_20200130-01262257.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdconv_c3-c5_group4_1x_coco/faster_rcnn_r50_fpn_mdconv_c3-c5_group4_1x_coco_20200130-01262257.pth
 
   - Name: faster-rcnn_r50_fpn_mdpool_1x_coco
     In Collection: Deformable Convolutional Networks v2
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 38.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdpool_1x_coco/faster_rcnn_r50_fpn_mdpool_1x_coco_20200307-c0df27ff.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/faster_rcnn_r50_fpn_mdpool_1x_coco/faster_rcnn_r50_fpn_mdpool_1x_coco_20200307-c0df27ff.pth
 
   - Name: mask-rcnn_r50_fpn_mdconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks v2
@@ -99,7 +99,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dcn/mask_rcnn_r50_fpn_mdconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_mdconv_c3-c5_1x_coco_20200203-ad97591f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dcn/mask_rcnn_r50_fpn_mdconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_mdconv_c3-c5_1x_coco_20200203-ad97591f.pth
 
   - Name: mask-rcnn_r50_fpn_fp16_mdconv_c3-c5_1x_coco
     In Collection: Deformable Convolutional Networks v2
@@ -120,4 +120,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_mdconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_fp16_mdconv_c3-c5_1x_coco_20210520_180434-cf8fefa5.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/fp16/mask_rcnn_r50_fpn_fp16_mdconv_c3-c5_1x_coco/mask_rcnn_r50_fpn_fp16_mdconv_c3-c5_1x_coco_20210520_180434-cf8fefa5.pth

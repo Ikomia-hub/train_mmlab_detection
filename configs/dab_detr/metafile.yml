@@ -29,4 +29,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.3
-    Weights: https://download.openmmlab.com/mmdetection/v3.0/dab_detr/dab-detr_r50_8xb2-50e_coco/dab-detr_r50_8xb2-50e_coco_20221122_120837-c1035c8c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v3.0/dab_detr/dab-detr_r50_8xb2-50e_coco/dab-detr_r50_8xb2-50e_coco_20221122_120837-c1035c8c.pth

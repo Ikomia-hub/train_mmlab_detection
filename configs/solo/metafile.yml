@@ -32,7 +32,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 33.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solo/decoupled_solo_r50_fpn_1x_coco/decoupled_solo_r50_fpn_1x_coco_20210820_233348-6337c589.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solo/decoupled_solo_r50_fpn_1x_coco/decoupled_solo_r50_fpn_1x_coco_20210820_233348-6337c589.pth
 
   - Name: decoupled-solo_r50_fpn_3x_coco
     In Collection: SOLO
@@ -52,7 +52,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 36.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solo/decoupled_solo_r50_fpn_3x_coco/decoupled_solo_r50_fpn_3x_coco_20210821_042504-7b3301ec.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solo/decoupled_solo_r50_fpn_3x_coco/decoupled_solo_r50_fpn_3x_coco_20210821_042504-7b3301ec.pth
 
   - Name: decoupled-solo-light_r50_fpn_3x_coco
     In Collection: SOLO
@@ -72,7 +72,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 32.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solo/decoupled_solo_light_r50_fpn_3x_coco/decoupled_solo_light_r50_fpn_3x_coco_20210906_142703-e70e226f.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solo/decoupled_solo_light_r50_fpn_3x_coco/decoupled_solo_light_r50_fpn_3x_coco_20210906_142703-e70e226f.pth
 
   - Name: solo_r50_fpn_3x_coco
     In Collection: SOLO
@@ -92,7 +92,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 35.9
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solo/solo_r50_fpn_3x_coco/solo_r50_fpn_3x_coco_20210901_012353-11d224d7.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solo/solo_r50_fpn_3x_coco/solo_r50_fpn_3x_coco_20210901_012353-11d224d7.pth
 
   - Name: solo_r50_fpn_1x_coco
     In Collection: SOLO
@@ -112,4 +112,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 33.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/solo/solo_r50_fpn_1x_coco/solo_r50_fpn_1x_coco_20210821_035055-2290a6b8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/solo/solo_r50_fpn_1x_coco/solo_r50_fpn_1x_coco_20210821_035055-2290a6b8.pth

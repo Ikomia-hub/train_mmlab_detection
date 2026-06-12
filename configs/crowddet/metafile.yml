@@ -31,7 +31,7 @@ Models:
         Dataset: CrowdHuman
         Metrics:
           box AP: 90.32
-    Weights: https://download.openmmlab.com/mmdetection/v3.0/crowddet/crowddet-rcnn_refine_r50_fpn_8xb2-30e_crowdhuman/crowddet-rcnn_refine_r50_fpn_8xb2-30e_crowdhuman_20221024_215917-45602806.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v3.0/crowddet/crowddet-rcnn_refine_r50_fpn_8xb2-30e_crowdhuman/crowddet-rcnn_refine_r50_fpn_8xb2-30e_crowdhuman_20221024_215917-45602806.pth
 
   - Name: crowddet-rcnn_r50_fpn_8xb2-30e_crowdhuman
     In Collection: CrowdDet
@@ -44,4 +44,4 @@ Models:
         Dataset: CrowdHuman
         Metrics:
           box AP: 90.0
-    Weights: https://download.openmmlab.com/mmdetection/v3.0/crowddet/crowddet-rcnn_r50_fpn_8xb2-30e_crowdhuman/crowddet-rcnn_r50_fpn_8xb2-30e_crowdhuman_20221023_174954-dc319c2d.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v3.0/crowddet/crowddet-rcnn_r50_fpn_8xb2-30e_crowdhuman/crowddet-rcnn_r50_fpn_8xb2-30e_crowdhuman_20221023_174954-dc319c2d.pth

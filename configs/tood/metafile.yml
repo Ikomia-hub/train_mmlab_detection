@@ -27,7 +27,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 46.1
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r101_fpn_mstrain_2x_coco/tood_r101_fpn_mstrain_2x_coco_20211210_144232-a18f53c8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_r101_fpn_mstrain_2x_coco/tood_r101_fpn_mstrain_2x_coco_20211210_144232-a18f53c8.pth
 
   - Name: tood_x101-64x4d_fpn_ms-2x_coco
     In Collection: TOOD
@@ -40,7 +40,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 47.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_x101_64x4d_fpn_mstrain_2x_coco/tood_x101_64x4d_fpn_mstrain_2x_coco_20211211_003519-a4f36113.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_x101_64x4d_fpn_mstrain_2x_coco/tood_x101_64x4d_fpn_mstrain_2x_coco_20211211_003519-a4f36113.pth
 
   - Name: tood_r101-dconv-c3-c5_fpn_ms-2x_coco
     In Collection: TOOD
@@ -53,7 +53,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 49.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r101_fpn_dconv_c3-c5_mstrain_2x_coco/tood_r101_fpn_dconv_c3-c5_mstrain_2x_coco_20211210_213728-4a824142.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_r101_fpn_dconv_c3-c5_mstrain_2x_coco/tood_r101_fpn_dconv_c3-c5_mstrain_2x_coco_20211210_213728-4a824142.pth
 
   - Name: tood_r50_fpn_anchor-based_1x_coco
     In Collection: TOOD
@@ -66,7 +66,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_anchor_based_1x_coco/tood_r50_fpn_anchor_based_1x_coco_20211214_100105-b776c134.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_r50_fpn_anchor_based_1x_coco/tood_r50_fpn_anchor_based_1x_coco_20211214_100105-b776c134.pth
 
   - Name: tood_r50_fpn_1x_coco
     In Collection: TOOD
@@ -79,7 +79,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth
 
   - Name: tood_r50_fpn_ms-2x_coco
     In Collection: TOOD
@@ -92,4 +92,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 44.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_mstrain_2x_coco/tood_r50_fpn_mstrain_2x_coco_20211210_144231-3b23174c.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/tood/tood_r50_fpn_mstrain_2x_coco/tood_r50_fpn_mstrain_2x_coco_20211210_144231-3b23174c.pth

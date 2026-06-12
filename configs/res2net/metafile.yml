@@ -17,7 +17,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 43.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/res2net/faster_rcnn_r2_101_fpn_2x_coco/faster_rcnn_r2_101_fpn_2x_coco-175f1da6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/res2net/faster_rcnn_r2_101_fpn_2x_coco/faster_rcnn_r2_101_fpn_2x_coco-175f1da6.pth
     Paper:
       URL: https://arxiv.org/abs/1904.01169
       Title: 'Res2Net for object detection and instance segmentation'
@@ -48,7 +48,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 38.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/res2net/mask_rcnn_r2_101_fpn_2x_coco/mask_rcnn_r2_101_fpn_2x_coco-17f061e8.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/res2net/mask_rcnn_r2_101_fpn_2x_coco/mask_rcnn_r2_101_fpn_2x_coco-17f061e8.pth
     Paper:
       URL: https://arxiv.org/abs/1904.01169
       Title: 'Res2Net for object detection and instance segmentation'
@@ -75,7 +75,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 45.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/res2net/cascade_rcnn_r2_101_fpn_20e_coco/cascade_rcnn_r2_101_fpn_20e_coco-f4b7b7db.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/res2net/cascade_rcnn_r2_101_fpn_20e_coco/cascade_rcnn_r2_101_fpn_20e_coco-f4b7b7db.pth
     Paper:
       URL: https://arxiv.org/abs/1904.01169
       Title: 'Res2Net for object detection and instance segmentation'
@@ -106,7 +106,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 40.0
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/res2net/cascade_mask_rcnn_r2_101_fpn_20e_coco/cascade_mask_rcnn_r2_101_fpn_20e_coco-8a7b41e1.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/res2net/cascade_mask_rcnn_r2_101_fpn_20e_coco/cascade_mask_rcnn_r2_101_fpn_20e_coco-8a7b41e1.pth
     Paper:
       URL: https://arxiv.org/abs/1904.01169
       Title: 'Res2Net for object detection and instance segmentation'
@@ -136,7 +136,7 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 41.6
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/res2net/htc_r2_101_fpn_20e_coco/htc_r2_101_fpn_20e_coco-3a8d2112.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/res2net/htc_r2_101_fpn_20e_coco/htc_r2_101_fpn_20e_coco-3a8d2112.pth
     Paper:
       URL: https://arxiv.org/abs/1904.01169
       Title: 'Res2Net for object detection and instance segmentation'

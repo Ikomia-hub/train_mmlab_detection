@@ -29,7 +29,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 40.7
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scratch/faster_rcnn_r50_fpn_gn-all_scratch_6x_coco/scratch_faster_rcnn_r50_fpn_gn_6x_bbox_mAP-0.407_20200201_193013-90813d01.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scratch/faster_rcnn_r50_fpn_gn-all_scratch_6x_coco/scratch_faster_rcnn_r50_fpn_gn_6x_bbox_mAP-0.407_20200201_193013-90813d01.pth
 
   - Name: mask-rcnn_r50_fpn_gn-all_scratch_6x_coco
     In Collection: Rethinking ImageNet Pre-training
@@ -45,4 +45,4 @@ Models:
         Dataset: COCO
         Metrics:
           mask AP: 37.4
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/scratch/mask_rcnn_r50_fpn_gn-all_scratch_6x_coco/scratch_mask_rcnn_r50_fpn_gn_6x_bbox_mAP-0.412__segm_mAP-0.374_20200201_193051-1e190a40.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/scratch/mask_rcnn_r50_fpn_gn-all_scratch_6x_coco/scratch_mask_rcnn_r50_fpn_gn_6x_bbox_mAP-0.412__segm_mAP-0.374_20200201_193051-1e190a40.pth

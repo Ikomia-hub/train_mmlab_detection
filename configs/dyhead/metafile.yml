@@ -40,7 +40,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 42.5
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dyhead/atss_r50_fpn_dyhead_for_reproduction_1x_coco/atss_r50_fpn_dyhead_for_reproduction_4x4_1x_coco_20220107_213939-162888e6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dyhead/atss_r50_fpn_dyhead_for_reproduction_1x_coco/atss_r50_fpn_dyhead_for_reproduction_4x4_1x_coco_20220107_213939-162888e6.pth
 
   - Name: atss_r50_fpn_dyhead_1x_coco
     In Collection: DyHead
@@ -60,7 +60,7 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 43.3
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dyhead/atss_r50_fpn_dyhead_4x4_1x_coco/atss_r50_fpn_dyhead_4x4_1x_coco_20211219_023314-eaa620c6.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dyhead/atss_r50_fpn_dyhead_4x4_1x_coco/atss_r50_fpn_dyhead_4x4_1x_coco_20211219_023314-eaa620c6.pth
 
   - Name: atss_swin-l-p4-w12_fpn_dyhead_ms-2x_coco
     In Collection: DyHead
@@ -73,4 +73,4 @@ Models:
         Dataset: COCO
         Metrics:
           box AP: 56.2
-    Weights: https://download.openmmlab.com/mmdetection/v2.0/dyhead/atss_swin-l-p4-w12_fpn_dyhead_mstrain_2x_coco/atss_swin-l-p4-w12_fpn_dyhead_mstrain_2x_coco_20220509_100315-bc5b6516.pth
+    Weights: https://mmassets.onedl.ai/mmdetection/v2.0/dyhead/atss_swin-l-p4-w12_fpn_dyhead_mstrain_2x_coco/atss_swin-l-p4-w12_fpn_dyhead_mstrain_2x_coco_20220509_100315-bc5b6516.pth
