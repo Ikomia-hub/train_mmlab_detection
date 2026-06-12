@@ -314,7 +314,7 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         self.info.path = "Plugins/Python/Detection"
         self.info.icon_path = "icons/mmlab.png"
         self.info.version = "2.0.0"
-        self.info.max_python_version = "3.10"
+        self.info.min_python_version = "3.10"
         self.info.min_ikomia_version = "0.16.0"
         # self.info.icon_path = "your path to a specific icon"
         self.info.authors = "Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and" \
