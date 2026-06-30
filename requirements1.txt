@@ -1,5 +1,5 @@
---extra-index-url https://download.pytorch.org/whl/cu129
-torch==2.8.0
-torchvision==0.23.0
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+torchvision==0.22.1
 
 pillow>=11.0.0, <12.0.0

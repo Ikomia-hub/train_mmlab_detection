@@ -1,6 +1,6 @@
 git+https://github.com/cocodataset/panopticapi.git
 
 --find-links https://miropsota.github.io/torch_packages_builder/mmcv/
-mmcv==2.2.0+a8073c7pt2.8.0cu129
+mmcv==2.2.0+a8073c7pt2.7.1cu128
 mmengine==0.10.7
 git+https://github.com/Ikomia-dev/mmdetection.git

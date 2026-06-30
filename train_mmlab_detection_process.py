@@ -313,7 +313,7 @@ class TrainMmlabDetectionFactory(dataprocess.CTaskFactory):
         # relative path -> as displayed in Ikomia application process tree
         self.info.path = "Plugins/Python/Detection"
         self.info.icon_path = "icons/mmlab.png"
-        self.info.version = "2.0.0"
+        self.info.version = "2.1.0"
         self.info.min_python_version = "3.10"
         self.info.min_ikomia_version = "0.16.0"
         # self.info.icon_path = "your path to a specific icon"
